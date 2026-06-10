@@ -18,8 +18,6 @@
   --blue:#3b82f6;--text:#f0f4ff;--muted:#6b7fa3;--radius:12px;--radius-sm:8px;
 }
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;overflow-x:hidden}
-
-/* Header */
 .app-header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 14px 8px}
 .header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .app-title{display:flex;align-items:center;gap:8px}
@@ -27,42 +25,29 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 .app-title .sub{font-size:10px;color:var(--muted);margin-top:1px}
 .notif-btn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:20px;padding:6px 11px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .2s}
 .notif-btn.on{background:var(--green-dim);border-color:var(--green);color:var(--green)}
-
-/* Search */
 .search-wrap{position:relative;margin-bottom:8px}
 .search-wrap .ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none}
 .search-input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-size:14px;padding:8px 12px 8px 32px;outline:none}
 .search-input:focus{border-color:var(--blue)}
 .search-input::placeholder{color:var(--muted)}
-
-/* Nav tabs */
-.nav-tabs{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border)}
+.nav-tabs{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
 .nav-tab{flex:1;padding:10px 4px;text-align:center;font-size:12px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-weight:500}
 .nav-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
-
-/* Stage filter chips */
 .filter-row{display:flex;gap:5px;overflow-x:auto;padding:8px 14px 6px;scrollbar-width:none;background:var(--surface);border-bottom:1px solid var(--border)}
 .filter-row::-webkit-scrollbar{display:none}
 .chip{flex-shrink:0;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font-size:11px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .chip.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
-
-/* Stats bar — clickable */
 .stats-bar{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
-.stat-item{flex:1;text-align:center;padding:10px 4px;border-right:1px solid var(--border);cursor:pointer;transition:background .2s;-webkit-tap-highlight-color:transparent}
+.stat-item{flex:1;text-align:center;padding:10px 4px;border-right:1px solid var(--border);cursor:pointer}
 .stat-item:last-child{border-right:none}
-.stat-item:active{background:var(--card)}
 .stat-num{font-size:18px;font-weight:700;color:var(--gold)}
 .stat-label{font-size:10px;color:var(--muted);margin-top:1px}
-
-/* Today banner */
 .today-banner{background:linear-gradient(135deg,#0f2027,#1a3a2a);border-bottom:1px solid var(--border);padding:9px 14px;display:flex;align-items:center;gap:8px}
 .live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pulse 1.5s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
 .today-text{font-size:13px;color:var(--text)}
 .today-count{font-weight:700;color:var(--gold)}
 .no-today{padding:9px 14px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--border)}
-
-/* Main */
 .main{padding:0 12px 80px}
 .day-section{margin-top:14px}
 .day-header{display:flex;justify-content:space-between;align-items:center;padding:4px 2px;margin-bottom:7px;border-bottom:1px solid var(--border)}
@@ -70,18 +55,15 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 .day-name.hl{color:var(--gold)}
 .today-tag{font-size:9px;background:var(--gold-dim);color:var(--gold);border-radius:20px;padding:2px 6px;margin-left:5px;font-weight:700}
 .day-count{font-size:10px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2px 7px}
-
-/* Match card */
-.match-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px 13px;margin-bottom:7px;display:grid;grid-template-columns:58px 1fr;gap:10px;position:relative;overflow:hidden}
-.match-card.is-today{border-color:var(--green-dim)}
+.match-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px 13px;margin-bottom:7px;display:grid;grid-template-columns:52px 1fr;gap:10px;position:relative;overflow:hidden}
 .match-card.is-today::before,.match-card.is-final::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.match-card.is-today{border-color:var(--green-dim)}
 .match-card.is-today::before{background:var(--green)}
 .match-card.is-final{border-color:var(--gold-dim)}
 .match-card.is-final::before{background:var(--gold)}
-.time-col{text-align:center;padding-top:2px}
-.bd-time{font-size:17px;font-weight:700;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
-.gmt-label{font-size:9px;color:var(--muted);margin-top:1px;line-height:1}
-.gmt-time{font-size:10px;color:var(--muted);line-height:1}
+.time-col{text-align:center;padding-top:4px}
+.bd-time{font-size:18px;font-weight:700;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
+.bdt-lbl{font-size:9px;color:var(--muted);margin-top:2px;letter-spacing:.3px}
 .teams-row{font-size:14px;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:3px}
 .vs{color:var(--muted);font-weight:400;font-size:11px;margin:0 3px}
 .venue-row{font-size:11px;color:var(--muted);margin-bottom:4px;display:flex;align-items:center;gap:3px}
@@ -95,8 +77,6 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 .badge-bronze{background:#1a1a1a;color:#9ca3af}
 .badge-final{background:#2d1f00;color:#f5c518}
 .badge-grp{background:#12263a;color:#60a5fa}
-
-/* Modal overlay */
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-bg.open{opacity:1;pointer-events:all}
 .modal{background:var(--surface);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;padding:0 0 24px;transform:translateY(20px);transition:transform .25s}
@@ -104,44 +84,33 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 .modal-handle{width:36px;height:4px;background:var(--border);border-radius:4px;margin:10px auto 6px}
 .modal-header{padding:8px 16px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .modal-title{font-size:15px;font-weight:700;color:var(--text)}
-.modal-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0 4px;line-height:1}
+.modal-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0 4px}
 .modal-body{padding:12px 16px}
-
-/* Group accordion */
 .grp-block{margin-bottom:8px;border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
 .grp-header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card);cursor:pointer;font-size:13px;font-weight:600;color:var(--text)}
-.grp-header .arr{transition:transform .25s;color:var(--muted);font-size:14px}
+.grp-header .arr{transition:transform .25s;color:var(--muted)}
 .grp-header.open .arr{transform:rotate(180deg)}
-.grp-teams{display:none;padding:8px 14px 10px;background:var(--bg)}
+.grp-teams{display:none;padding:6px 14px 10px;background:var(--bg)}
 .grp-teams.open{display:block}
-.team-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px}
+.team-row{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
 .team-row:last-child{border-bottom:none}
-.team-flag{font-size:18px;width:24px;text-align:center}
-
-/* Teams grid */
+.team-flag{font-size:18px;width:26px;text-align:center;flex-shrink:0}
 .teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .team-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;display:flex;align-items:center;gap:8px}
-.team-card .flag{font-size:20px}
-.team-card .info .name{font-size:13px;font-weight:600;color:var(--text)}
-.team-card .info .grp{font-size:10px;color:var(--muted)}
-
-/* Stadium list */
+.team-card .flag{font-size:20px;flex-shrink:0}
+.team-card .tname{font-size:12px;font-weight:600;color:var(--text)}
+.team-card .tgrp{font-size:10px;color:var(--muted)}
 .stadium-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.stadium-icon{font-size:22px;flex-shrink:0}
-.stadium-info .name{font-size:13px;font-weight:600;color:var(--text)}
-.stadium-info .city{font-size:11px;color:var(--muted);margin-top:1px}
-.country-badge{margin-left:auto;flex-shrink:0;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
+.stadium-info .sname{font-size:13px;font-weight:600;color:var(--text)}
+.stadium-info .scity{font-size:11px;color:var(--muted);margin-top:2px}
+.country-badge{margin-left:auto;flex-shrink:0;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600;white-space:nowrap}
 .cb-us{background:#1a2a4a;color:#93c5fd}
 .cb-ca{background:#2a1a1a;color:#f87171}
 .cb-mx{background:#1a2a1a;color:#4ade80}
-
-/* Empty / Toast */
 .empty{text-align:center;padding:40px 16px;color:var(--muted)}
 .empty-icon{font-size:36px;margin-bottom:10px}
 .toast{position:fixed;bottom:76px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--green-dim);border:1px solid var(--green);color:var(--green);border-radius:var(--radius-sm);padding:9px 14px;font-size:12px;opacity:0;transition:all .3s;z-index:999;white-space:nowrap;pointer-events:none}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
-/* Install banner */
 .install-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--surface);border-top:1px solid var(--border);padding:12px 14px;display:flex;align-items:center;gap:10px}
 .install-banner.hidden{display:none}
 .install-info strong{font-size:13px;display:block;color:var(--text)}
@@ -156,10 +125,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
   <div class="header-top">
     <div class="app-title">
       <span style="font-size:22px">🏆</span>
-      <div>
-        <h1>বিশ্বকাপ ২০২৬</h1>
-        <div class="sub">বাংলাদেশ সময় (BDT, GMT+6)</div>
-      </div>
+      <div><h1>বিশ্বকাপ ২০২৬</h1><div class="sub">বাংলাদেশ সময় (BDT, GMT+6)</div></div>
     </div>
     <button class="notif-btn" id="notifBtn" onclick="toggleNotif()">
       <span id="notifIcon">🔔</span><span id="notifTxt">Notification</span>
@@ -167,11 +133,10 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
   </div>
   <div class="search-wrap">
     <svg class="ico" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input class="search-input" type="text" id="searchInput" placeholder="দল বা ভেন্যু খুঁজুন..." oninput="renderList()">
+    <input class="search-input" type="text" id="searchInput" placeholder="দল বা ভেন্যু খুঁজুন..." oninput="renderContent()">
   </div>
 </div>
 
-<!-- Nav tabs -->
 <div class="nav-tabs">
   <div class="nav-tab active" id="tab-schedule" onclick="switchTab('schedule')">📅 সূচি</div>
   <div class="nav-tab" id="tab-groups" onclick="switchTab('groups')">🔵 গ্রুপ</div>
@@ -179,10 +144,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
   <div class="nav-tab" id="tab-stadiums" onclick="switchTab('stadiums')">🏟️ স্টেডিয়াম</div>
 </div>
 
-<!-- Schedule stage filter -->
 <div class="filter-row" id="filterRow"></div>
 
-<!-- Stats bar -->
 <div class="stats-bar">
   <div class="stat-item" onclick="switchTab('schedule')"><div class="stat-num">104</div><div class="stat-label">ম্যাচ</div></div>
   <div class="stat-item" onclick="switchTab('teams')"><div class="stat-num">48</div><div class="stat-label">দল</div></div>
@@ -193,7 +156,6 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 <div id="todayBanner"></div>
 <div class="main" id="mainContent"></div>
 
-<!-- Modal -->
 <div class="modal-bg" id="modalBg" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-handle"></div>
@@ -213,382 +175,360 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 </div>
 
 <script>
-// ─── Data ───────────────────────────────────────────────────────────────────
-
+// ─── সব ৪৮টি দলের তথ্য — গ্রুপ অনুযায়ী ───────────────────────────────────
+// সূত্র: NBC Sports, ESPN, worldcupwiki.com (জুন ২০২৬)
 const GROUPS = {
-  A:['মেক্সিকো 🇲🇽','দক্ষিণ কোরিয়া 🇰🇷','দক্ষিণ আফ্রিকা 🇿🇦','TBD (প্লে-অফ)'],
-  B:['কানাডা 🇨🇦','সুইজারল্যান্ড 🇨🇭','কাতার 🇶🇦','TBD (প্লে-অফ)'],
-  C:['ব্রাজিল 🇧🇷','মরক্কো 🇲🇦','স্কটল্যান্ড 🏴󠁧󠁢󠁳󠁣󠁴󠁿','হাইতি 🇭🇹'],
-  D:['যুক্তরাষ্ট্র 🇺🇸','অস্ট্রেলিয়া 🇦🇺','প্যারাগুয়ে 🇵🇾','TBD (প্লে-অফ)'],
-  E:['জার্মানি 🇩🇪','ইকুয়েডর 🇪🇨','আইভরি কোস্ট 🇨🇮','কিউরাসাও 🇨🇼'],
-  F:['নেদারল্যান্ডস 🇳🇱','জাপান 🇯🇵','তিউনিসিয়া 🇹🇳','TBD (প্লে-অফ)'],
-  G:['বেলজিয়াম 🇧🇪','ইরান 🇮🇷','মিশর 🇪🇬','নিউ জিল্যান্ড 🇳🇿'],
-  H:['স্পেন 🇪🇸','উরুগুয়ে 🇺🇾','সৌদি আরব 🇸🇦','কেপ ভার্দে 🇨🇻'],
-  I:['ফ্রান্স 🇫🇷','সেনেগাল 🇸🇳','নরওয়ে 🇳🇴','TBD (প্লে-অফ)'],
-  J:['আর্জেন্টিনা 🇦🇷','অস্ট্রিয়া 🇦🇹','আলজেরিয়া 🇩🇿','জর্ডান 🇯🇴'],
-  K:['পর্তুগাল 🇵🇹','কলম্বিয়া 🇨🇴','উজবেকিস্তান 🇺🇿','TBD (প্লে-অফ)'],
-  L:['ইংল্যান্ড 🏴󠁧󠁢󠁥󠁮󠁧󠁿','ক্রোয়েশিয়া 🇭🇷','পানামা 🇵🇦','ঘানা 🇬🇭'],
+  A: [
+    {n:'মেক্সিকো',       f:'🇲🇽', host:true},
+    {n:'দক্ষিণ কোরিয়া', f:'🇰🇷'},
+    {n:'দক্ষিণ আফ্রিকা', f:'🇿🇦'},
+    {n:'চেকিয়া',         f:'🇨🇿'},   // UEFA Playoff winner
+  ],
+  B: [
+    {n:'কানাডা',              f:'🇨🇦', host:true},
+    {n:'সুইজারল্যান্ড',      f:'🇨🇭'},
+    {n:'কাতার',              f:'🇶🇦'},
+    {n:'বসনিয়া ও হার্জেগোভিনা',f:'🇧🇦'}, // UEFA Playoff winner
+  ],
+  C: [
+    {n:'ব্রাজিল',    f:'🇧🇷'},
+    {n:'মরক্কো',    f:'🇲🇦'},
+    {n:'স্কটল্যান্ড',f:'🏴󠁧󠁢󠁳󠁣󠁴󠁿'},
+    {n:'হাইতি',     f:'🇭🇹'},
+  ],
+  D: [
+    {n:'যুক্তরাষ্ট্র', f:'🇺🇸', host:true},
+    {n:'অস্ট্রেলিয়া', f:'🇦🇺'},
+    {n:'প্যারাগুয়ে',  f:'🇵🇾'},
+    {n:'তুরস্ক',      f:'🇹🇷'},   // UEFA Playoff winner
+  ],
+  E: [
+    {n:'জার্মানি',    f:'🇩🇪'},
+    {n:'ইকুয়েডর',   f:'🇪🇨'},
+    {n:'আইভরি কোস্ট',f:'🇨🇮'},
+    {n:'কিউরাসাও',   f:'🇨🇼'},
+  ],
+  F: [
+    {n:'নেদারল্যান্ডস',f:'🇳🇱'},
+    {n:'জাপান',        f:'🇯🇵'},
+    {n:'তিউনিসিয়া',   f:'🇹🇳'},
+    {n:'সুইডেন',       f:'🇸🇪'},   // UEFA Playoff winner
+  ],
+  G: [
+    {n:'বেলজিয়াম',    f:'🇧🇪'},
+    {n:'ইরান',         f:'🇮🇷'},
+    {n:'মিশর',         f:'🇪🇬'},
+    {n:'নিউ জিল্যান্ড',f:'🇳🇿'},
+  ],
+  H: [
+    {n:'স্পেন',      f:'🇪🇸'},
+    {n:'উরুগুয়ে',   f:'🇺🇾'},
+    {n:'সৌদি আরব',  f:'🇸🇦'},
+    {n:'কেপ ভার্দে', f:'🇨🇻'},
+  ],
+  I: [
+    {n:'ফ্রান্স',    f:'🇫🇷'},
+    {n:'সেনেগাল',   f:'🇸🇳'},
+    {n:'নরওয়ে',    f:'🇳🇴'},
+    {n:'DR কঙ্গো',  f:'🇨🇩'},   // Inter-confederation Playoff winner
+  ],
+  J: [
+    {n:'আর্জেন্টিনা',f:'🇦🇷'},
+    {n:'অস্ট্রিয়া',  f:'🇦🇹'},
+    {n:'আলজেরিয়া',  f:'🇩🇿'},
+    {n:'জর্ডান',     f:'🇯🇴'},
+  ],
+  K: [
+    {n:'পর্তুগাল',   f:'🇵🇹'},
+    {n:'কলম্বিয়া',  f:'🇨🇴'},
+    {n:'উজবেকিস্তান',f:'🇺🇿'},
+    {n:'ইরাক',       f:'🇮🇶'},   // Inter-confederation Playoff winner
+  ],
+  L: [
+    {n:'ইংল্যান্ড',  f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+    {n:'ক্রোয়েশিয়া',f:'🇭🇷'},
+    {n:'পানামা',     f:'🇵🇦'},
+    {n:'ঘানা',       f:'🇬🇭'},
+  ],
 };
 
+// ম্যাচ ডেটাতে দলের নাম আপডেট করা হয়েছে
+const TEAM = (g,i)=> GROUPS[g][i].f+' '+GROUPS[g][i].n;
+
 const STADIUMS = [
-  {name:'Estadio Azteca (Mexico City Stadium)',city:'মেক্সিকো সিটি',country:'মেক্সিকো 🇲🇽',cap:'87,523',cls:'cb-mx'},
-  {name:'Estadio Akron (Guadalajara Stadium)',city:'গুয়াদালাহারা',country:'মেক্সিকো 🇲🇽',cap:'49,850',cls:'cb-mx'},
-  {name:'Estadio BBVA (Monterrey Stadium)',city:'মন্তেরে',country:'মেক্সিকো 🇲🇽',cap:'53,500',cls:'cb-mx'},
-  {name:'BC Place (Vancouver Stadium)',city:'ভ্যানকুভার',country:'কানাডা 🇨🇦',cap:'54,500',cls:'cb-ca'},
-  {name:'BMO Field (Toronto Stadium)',city:'টরন্টো',country:'কানাডা 🇨🇦',cap:'45,000',cls:'cb-ca'},
-  {name:'MetLife Stadium (NY/NJ Stadium)',city:'নিউ ইয়র্ক-নিউ জার্সি',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'82,500',cls:'cb-us'},
-  {name:'AT&T Stadium (Dallas Stadium)',city:'ড্যালাস',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'80,000',cls:'cb-us'},
-  {name:'SoFi Stadium (Los Angeles Stadium)',city:'লস অ্যাঞ্জেলেস',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'70,240',cls:'cb-us'},
-  {name:'NRG Stadium (Houston Stadium)',city:'হিউস্টন',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'72,220',cls:'cb-us'},
-  {name:'Lincoln Financial Field (Philadelphia Stadium)',city:'ফিলাডেলফিয়া',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'69,796',cls:'cb-us'},
-  {name:'Levi\'s Stadium (San Francisco Bay Area)',city:'সান ফ্রান্সিসকো',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'68,500',cls:'cb-us'},
-  {name:'Mercedes-Benz Stadium (Atlanta Stadium)',city:'আটলান্টা',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'71,000',cls:'cb-us'},
-  {name:'Hard Rock Stadium (Miami Stadium)',city:'মিয়ামি',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'65,326',cls:'cb-us'},
-  {name:'Arrowhead Stadium (Kansas City Stadium)',city:'কানসাস সিটি',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'76,416',cls:'cb-us'},
-  {name:'Lumen Field (Seattle Stadium)',city:'সিয়াটেল',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'68,740',cls:'cb-us'},
-  {name:'Gillette Stadium (Boston Stadium)',city:'বোস্টন',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'65,878',cls:'cb-us'},
+  {name:'Estadio Azteca',full:'Estadio Azteca (মেক্সিকো সিটি)',city:'মেক্সিকো সিটি',cap:'৮৭,৫২৩',cls:'cb-mx',country:'মেক্সিকো 🇲🇽'},
+  {name:'Estadio Akron',full:'Estadio Akron (গুয়াদালাহারা)',city:'গুয়াদালাহারা',cap:'৪৯,৮৫০',cls:'cb-mx',country:'মেক্সিকো 🇲🇽'},
+  {name:'Estadio BBVA',full:'Estadio BBVA (মন্তেরে)',city:'মন্তেরে',cap:'৫৩,৫০০',cls:'cb-mx',country:'মেক্সিকো 🇲🇽'},
+  {name:'BC Place',full:'BC Place (ভ্যানকুভার)',city:'ভ্যানকুভার',cap:'৫৪,৫০০',cls:'cb-ca',country:'কানাডা 🇨🇦'},
+  {name:'BMO Field',full:'BMO Field (টরন্টো)',city:'টরন্টো',cap:'৪৫,০০০',cls:'cb-ca',country:'কানাডা 🇨🇦'},
+  {name:'MetLife Stadium',full:'MetLife Stadium (নিউ ইয়র্ক-নিউ জার্সি)',city:'নিউ ইয়র্ক-নিউ জার্সি',cap:'৮২,৫০০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'AT&T Stadium',full:'AT&T Stadium (ড্যালাস)',city:'ড্যালাস',cap:'৮০,০০০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'SoFi Stadium',full:'SoFi Stadium (লস অ্যাঞ্জেলেস)',city:'লস অ্যাঞ্জেলেস',cap:'৭০,২৪০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'NRG Stadium',full:'NRG Stadium (হিউস্টন)',city:'হিউস্টন',cap:'৭২,২২০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'Lincoln Financial Field',full:'Lincoln Financial Field (ফিলাডেলফিয়া)',city:'ফিলাডেলফিয়া',cap:'৬৯,৭৯৬',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:"Levi's Stadium",full:"Levi's Stadium (সান ফ্রান্সিসকো)",city:'সান ফ্রান্সিসকো',cap:'৬৮,৫০০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'Mercedes-Benz Stadium',full:'Mercedes-Benz Stadium (আটলান্টা)',city:'আটলান্টা',cap:'৭১,০০০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'Hard Rock Stadium',full:'Hard Rock Stadium (মিয়ামি)',city:'মিয়ামি',cap:'৬৫,৩২৬',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'Arrowhead Stadium',full:'Arrowhead Stadium (কানসাস সিটি)',city:'কানসাস সিটি',cap:'৭৬,৪১৬',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'Lumen Field',full:'Lumen Field (সিয়াটেল)',city:'সিয়াটেল',cap:'৬৮,৭৪০',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
+  {name:'Gillette Stadium',full:'Gillette Stadium (বোস্টন)',city:'বোস্টন',cap:'৬৫,৮৭৮',cls:'cb-us',country:'যুক্তরাষ্ট্র 🇺🇸'},
 ];
 
-// All 48 teams flat list
-const ALL_TEAMS = Object.entries(GROUPS).flatMap(([g, teams]) =>
-  teams.map(t => ({team: t, group: g}))
-);
+// গ্রুপ থেকে দলের নাম বের করার helper
+const T=(g,i)=>`${GROUPS[g][i].f} ${GROUPS[g][i].n}`;
 
-// Matches — BDT times stored directly as local BD time strings
-// Formula: GMT+6. If gH+6 >= 24 then date is next day.
-// We store {date (UTC date), gH, gM} and compute BDT at runtime
-const RAW = [
-  {date:'2026-06-11',gH:21,gM:0,t1:'মেক্সিকো 🇲🇽',t2:'দক্ষিণ আফ্রিকা 🇿🇦',v:'মেক্সিকো সিটি',s:'group',g:'A'},
-  {date:'2026-06-12',gH:4,gM:0,t1:'দক্ষিণ কোরিয়া 🇰🇷',t2:'TBD',v:'গুয়াদালাহারা',s:'group',g:'A'},
-  {date:'2026-06-12',gH:20,gM:0,t1:'কানাডা 🇨🇦',t2:'TBD',v:'টরন্টো',s:'group',g:'B'},
-  {date:'2026-06-13',gH:5,gM:0,t1:'যুক্তরাষ্ট্র 🇺🇸',t2:'প্যারাগুয়ে 🇵🇾',v:'লস অ্যাঞ্জেলেস',s:'group',g:'D'},
-  {date:'2026-06-13',gH:23,gM:0,t1:'কাতার 🇶🇦',t2:'সুইজারল্যান্ড 🇨🇭',v:'সান ফ্রান্সিসকো',s:'group',g:'B'},
-  {date:'2026-06-13',gH:23,gM:0,t1:'ব্রাজিল 🇧🇷',t2:'মরক্কো 🇲🇦',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'C'},
-  {date:'2026-06-14',gH:2,gM:0,t1:'হাইতি 🇭🇹',t2:'স্কটল্যান্ড 🏴󠁧󠁢󠁳󠁣󠁴󠁿',v:'বোস্টন',s:'group',g:'C'},
-  {date:'2026-06-14',gH:8,gM:0,t1:'অস্ট্রেলিয়া 🇦🇺',t2:'TBD',v:'ভ্যানকুভার',s:'group',g:'D'},
-  {date:'2026-06-14',gH:19,gM:0,t1:'জার্মানি 🇩🇪',t2:'কিউরাসাও 🇨🇼',v:'হিউস্টন',s:'group',g:'E'},
-  {date:'2026-06-14',gH:22,gM:0,t1:'নেদারল্যান্ডস 🇳🇱',t2:'জাপান 🇯🇵',v:'ড্যালাস',s:'group',g:'F'},
-  {date:'2026-06-15',gH:0,gM:0,t1:'আইভরি কোস্ট 🇨🇮',t2:'ইকুয়েডর 🇪🇨',v:'ফিলাডেলফিয়া',s:'group',g:'E'},
-  {date:'2026-06-15',gH:4,gM:0,t1:'TBD',t2:'তিউনিসিয়া 🇹🇳',v:'মন্তেরে',s:'group',g:'F'},
-  {date:'2026-06-15',gH:17,gM:0,t1:'স্পেন 🇪🇸',t2:'কেপ ভার্দে 🇨🇻',v:'আটলান্টা',s:'group',g:'H'},
-  {date:'2026-06-15',gH:23,gM:0,t1:'বেলজিয়াম 🇧🇪',t2:'মিশর 🇪🇬',v:'ভ্যানকুভার',s:'group',g:'G'},
-  {date:'2026-06-15',gH:23,gM:0,t1:'সৌদি আরব 🇸🇦',t2:'উরুগুয়ে 🇺🇾',v:'মিয়ামি',s:'group',g:'H'},
-  {date:'2026-06-16',gH:5,gM:0,t1:'ইরান 🇮🇷',t2:'নিউ জিল্যান্ড 🇳🇿',v:'লস অ্যাঞ্জেলেস',s:'group',g:'G'},
-  {date:'2026-06-16',gH:20,gM:0,t1:'ফ্রান্স 🇫🇷',t2:'সেনেগাল 🇸🇳',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'I'},
-  {date:'2026-06-16',gH:23,gM:0,t1:'TBD',t2:'নরওয়ে 🇳🇴',v:'বোস্টন',s:'group',g:'I'},
-  {date:'2026-06-17',gH:3,gM:0,t1:'আর্জেন্টিনা 🇦🇷',t2:'আলজেরিয়া 🇩🇿',v:'কানসাস সিটি',s:'group',g:'J'},
-  {date:'2026-06-17',gH:8,gM:0,t1:'অস্ট্রিয়া 🇦🇹',t2:'জর্ডান 🇯🇴',v:'সান ফ্রান্সিসকো',s:'group',g:'J'},
-  {date:'2026-06-17',gH:19,gM:0,t1:'পর্তুগাল 🇵🇹',t2:'TBD',v:'হিউস্টন',s:'group',g:'K'},
-  {date:'2026-06-17',gH:22,gM:0,t1:'ইংল্যান্ড 🏴󠁧󠁢󠁥󠁮󠁧󠁿',t2:'ক্রোয়েশিয়া 🇭🇷',v:'ড্যালাস',s:'group',g:'L'},
-  {date:'2026-06-18',gH:0,gM:0,t1:'ঘানা 🇬🇭',t2:'পানামা 🇵🇦',v:'টরন্টো',s:'group',g:'L'},
-  {date:'2026-06-18',gH:4,gM:0,t1:'উজবেকিস্তান 🇺🇿',t2:'কলম্বিয়া 🇨🇴',v:'মেক্সিকো সিটি',s:'group',g:'K'},
-  {date:'2026-06-18',gH:17,gM:0,t1:'TBD',t2:'দক্ষিণ আফ্রিকা 🇿🇦',v:'আটলান্টা',s:'group',g:'A'},
-  {date:'2026-06-18',gH:23,gM:0,t1:'সুইজারল্যান্ড 🇨🇭',t2:'TBD',v:'লস অ্যাঞ্জেলেস',s:'group',g:'B'},
-  {date:'2026-06-19',gH:2,gM:0,t1:'কানাডা 🇨🇦',t2:'কাতার 🇶🇦',v:'ভ্যানকুভার',s:'group',g:'B'},
-  {date:'2026-06-19',gH:3,gM:0,t1:'মেক্সিকো 🇲🇽',t2:'দক্ষিণ কোরিয়া 🇰🇷',v:'গুয়াদালাহারা',s:'group',g:'A'},
-  {date:'2026-06-19',gH:23,gM:0,t1:'স্কটল্যান্ড 🏴󠁧󠁢󠁳󠁣󠁴󠁿',t2:'মরক্কো 🇲🇦',v:'বোস্টন',s:'group',g:'C'},
-  {date:'2026-06-19',gH:23,gM:0,t1:'যুক্তরাষ্ট্র 🇺🇸',t2:'অস্ট্রেলিয়া 🇦🇺',v:'সিয়াটেল',s:'group',g:'D'},
-  {date:'2026-06-20',gH:2,gM:0,t1:'ব্রাজিল 🇧🇷',t2:'হাইতি 🇭🇹',v:'ফিলাডেলফিয়া',s:'group',g:'C'},
-  {date:'2026-06-20',gH:8,gM:0,t1:'TBD',t2:'প্যারাগুয়ে 🇵🇾',v:'সান ফ্রান্সিসকো',s:'group',g:'D'},
-  {date:'2026-06-20',gH:19,gM:0,t1:'নেদারল্যান্ডস 🇳🇱',t2:'TBD',v:'হিউস্টন',s:'group',g:'F'},
-  {date:'2026-06-20',gH:21,gM:0,t1:'জার্মানি 🇩🇪',t2:'আইভরি কোস্ট 🇨🇮',v:'টরন্টো',s:'group',g:'E'},
-  {date:'2026-06-21',gH:4,gM:0,t1:'ইকুয়েডর 🇪🇨',t2:'কিউরাসাও 🇨🇼',v:'কানসাস সিটি',s:'group',g:'E'},
-  {date:'2026-06-21',gH:6,gM:0,t1:'তিউনিসিয়া 🇹🇳',t2:'জাপান 🇯🇵',v:'মন্তেরে',s:'group',g:'F'},
-  {date:'2026-06-21',gH:17,gM:0,t1:'স্পেন 🇪🇸',t2:'সৌদি আরব 🇸🇦',v:'আটলান্টা',s:'group',g:'H'},
-  {date:'2026-06-21',gH:23,gM:0,t1:'বেলজিয়াম 🇧🇪',t2:'ইরান 🇮🇷',v:'লস অ্যাঞ্জেলেস',s:'group',g:'G'},
-  {date:'2026-06-21',gH:23,gM:0,t1:'উরুগুয়ে 🇺🇾',t2:'কেপ ভার্দে 🇨🇻',v:'মিয়ামি',s:'group',g:'H'},
-  {date:'2026-06-22',gH:5,gM:0,t1:'নিউ জিল্যান্ড 🇳🇿',t2:'মিশর 🇪🇬',v:'ভ্যানকুভার',s:'group',g:'G'},
-  {date:'2026-06-22',gH:19,gM:0,t1:'আর্জেন্টিনা 🇦🇷',t2:'অস্ট্রিয়া 🇦🇹',v:'ড্যালাস',s:'group',g:'J'},
-  {date:'2026-06-22',gH:22,gM:0,t1:'ফ্রান্স 🇫🇷',t2:'TBD',v:'ফিলাডেলফিয়া',s:'group',g:'I'},
-  {date:'2026-06-23',gH:1,gM:0,t1:'নরওয়ে 🇳🇴',t2:'সেনেগাল 🇸🇳',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'I'},
-  {date:'2026-06-23',gH:7,gM:0,t1:'জর্ডান 🇯🇴',t2:'আলজেরিয়া 🇩🇿',v:'সান ফ্রান্সিসকো',s:'group',g:'J'},
-  {date:'2026-06-23',gH:19,gM:0,t1:'পর্তুগাল 🇵🇹',t2:'উজবেকিস্তান 🇺🇿',v:'হিউস্টন',s:'group',g:'K'},
-  {date:'2026-06-23',gH:21,gM:0,t1:'ইংল্যান্ড 🏴󠁧󠁢󠁥󠁮󠁧󠁿',t2:'ঘানা 🇬🇭',v:'বোস্টন',s:'group',g:'L'},
-  {date:'2026-06-24',gH:0,gM:0,t1:'পানামা 🇵🇦',t2:'ক্রোয়েশিয়া 🇭🇷',v:'টরন্টো',s:'group',g:'L'},
-  {date:'2026-06-24',gH:4,gM:0,t1:'কলম্বিয়া 🇨🇴',t2:'TBD',v:'গুয়াদালাহারা',s:'group',g:'K'},
-  {date:'2026-06-24',gH:23,gM:0,t1:'সুইজারল্যান্ড 🇨🇭',t2:'কানাডা 🇨🇦',v:'ভ্যানকুভার',s:'group',g:'B'},
-  {date:'2026-06-24',gH:23,gM:0,t1:'TBD',t2:'কাতার 🇶🇦',v:'সিয়াটেল',s:'group',g:'B'},
-  {date:'2026-06-24',gH:23,gM:0,t1:'স্কটল্যান্ড 🏴󠁧󠁢󠁳󠁣󠁴󠁿',t2:'ব্রাজিল 🇧🇷',v:'মিয়ামি',s:'group',g:'C'},
-  {date:'2026-06-24',gH:23,gM:0,t1:'মরক্কো 🇲🇦',t2:'হাইতি 🇭🇹',v:'আটলান্টা',s:'group',g:'C'},
-  {date:'2026-06-25',gH:3,gM:0,t1:'TBD',t2:'মেক্সিকো 🇲🇽',v:'মেক্সিকো সিটি',s:'group',g:'A'},
-  {date:'2026-06-25',gH:3,gM:0,t1:'দক্ষিণ আফ্রিকা 🇿🇦',t2:'দক্ষিণ কোরিয়া 🇰🇷',v:'মন্তেরে',s:'group',g:'A'},
-  {date:'2026-06-25',gH:21,gM:0,t1:'ইকুয়েডর 🇪🇨',t2:'জার্মানি 🇩🇪',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'E'},
-  {date:'2026-06-25',gH:21,gM:0,t1:'কিউরাসাও 🇨🇼',t2:'আইভরি কোস্ট 🇨🇮',v:'ফিলাডেলফিয়া',s:'group',g:'E'},
-  {date:'2026-06-26',gH:1,gM:0,t1:'জাপান 🇯🇵',t2:'TBD',v:'ড্যালাস',s:'group',g:'F'},
-  {date:'2026-06-26',gH:1,gM:0,t1:'তিউনিসিয়া 🇹🇳',t2:'নেদারল্যান্ডস 🇳🇱',v:'কানসাস সিটি',s:'group',g:'F'},
-  {date:'2026-06-26',gH:6,gM:0,t1:'TBD',t2:'যুক্তরাষ্ট্র 🇺🇸',v:'লস অ্যাঞ্জেলেস',s:'group',g:'D'},
-  {date:'2026-06-26',gH:6,gM:0,t1:'প্যারাগুয়ে 🇵🇾',t2:'অস্ট্রেলিয়া 🇦🇺',v:'সান ফ্রান্সিসকো',s:'group',g:'D'},
-  {date:'2026-06-26',gH:20,gM:0,t1:'নরওয়ে 🇳🇴',t2:'ফ্রান্স 🇫🇷',v:'বোস্টন',s:'group',g:'I'},
-  {date:'2026-06-26',gH:20,gM:0,t1:'সেনেগাল 🇸🇳',t2:'TBD',v:'টরন্টো',s:'group',g:'I'},
-  {date:'2026-06-27',gH:2,gM:0,t1:'কেপ ভার্দে 🇨🇻',t2:'সৌদি আরব 🇸🇦',v:'হিউস্টন',s:'group',g:'H'},
-  {date:'2026-06-27',gH:2,gM:0,t1:'উরুগুয়ে 🇺🇾',t2:'স্পেন 🇪🇸',v:'গুয়াদালাহারা',s:'group',g:'H'},
-  {date:'2026-06-27',gH:7,gM:0,t1:'মিশর 🇪🇬',t2:'ইরান 🇮🇷',v:'সিয়াটেল',s:'group',g:'G'},
-  {date:'2026-06-27',gH:7,gM:0,t1:'নিউ জিল্যান্ড 🇳🇿',t2:'বেলজিয়াম 🇧🇪',v:'ভ্যানকুভার',s:'group',g:'G'},
-  {date:'2026-06-27',gH:22,gM:0,t1:'পানামা 🇵🇦',t2:'ইংল্যান্ড 🏴󠁧󠁢󠁥󠁮󠁧󠁿',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'L'},
-  {date:'2026-06-27',gH:22,gM:0,t1:'ক্রোয়েশিয়া 🇭🇷',t2:'ঘানা 🇬🇭',v:'ফিলাডেলফিয়া',s:'group',g:'L'},
-  {date:'2026-06-28',gH:2,gM:30,t1:'কলম্বিয়া 🇨🇴',t2:'পর্তুগাল 🇵🇹',v:'মিয়ামি',s:'group',g:'K'},
-  {date:'2026-06-28',gH:2,gM:30,t1:'TBD',t2:'উজবেকিস্তান 🇺🇿',v:'আটলান্টা',s:'group',g:'K'},
-  {date:'2026-06-28',gH:4,gM:0,t1:'আলজেরিয়া 🇩🇿',t2:'অস্ট্রিয়া 🇦🇹',v:'কানসাস সিটি',s:'group',g:'J'},
-  {date:'2026-06-28',gH:4,gM:0,t1:'জর্ডান 🇯🇴',t2:'আর্জেন্টিনা 🇦🇷',v:'ড্যালাস',s:'group',g:'J'},
-  {date:'2026-06-28',gH:23,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১',v:'লস অ্যাঞ্জেলেস',s:'r32'},
-  {date:'2026-06-29',gH:19,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ২',v:'হিউস্টন',s:'r32'},
-  {date:'2026-06-29',gH:22,gM:30,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৩',v:'বোস্টন',s:'r32'},
-  {date:'2026-06-30',gH:3,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৪',v:'মন্তেরে',s:'r32'},
-  {date:'2026-06-30',gH:19,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৫',v:'ড্যালাস',s:'r32'},
-  {date:'2026-06-30',gH:22,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৬',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'r32'},
-  {date:'2026-07-01',gH:3,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৭',v:'মেক্সিকো সিটি',s:'r32'},
-  {date:'2026-07-01',gH:17,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৮',v:'আটলান্টা',s:'r32'},
-  {date:'2026-07-01',gH:0,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৯',v:'সিয়াটেল',s:'r32'},
-  {date:'2026-07-01',gH:4,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১০',v:'সান ফ্রান্সিসকো',s:'r32'},
-  {date:'2026-07-02',gH:23,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১১',v:'লস অ্যাঞ্জেলেস',s:'r32'},
-  {date:'2026-07-03',gH:0,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১২',v:'টরন্টো',s:'r32'},
-  {date:'2026-07-03',gH:7,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৩',v:'ভ্যানকুভার',s:'r32'},
-  {date:'2026-07-03',gH:21,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৪',v:'ড্যালাস',s:'r32'},
-  {date:'2026-07-03',gH:23,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৫',v:'মিয়ামি',s:'r32'},
-  {date:'2026-07-04',gH:3,gM:30,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৬',v:'কানসাস সিটি',s:'r32'},
-  {date:'2026-07-04',gH:19,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ১',v:'হিউস্টন',s:'r16'},
-  {date:'2026-07-04',gH:22,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ২',v:'ফিলাডেলফিয়া',s:'r16'},
-  {date:'2026-07-05',gH:21,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৩',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'r16'},
-  {date:'2026-07-06',gH:2,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৪',v:'মেক্সিকো সিটি',s:'r16'},
-  {date:'2026-07-06',gH:21,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৫',v:'ড্যালাস',s:'r16'},
-  {date:'2026-07-07',gH:4,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৬',v:'সিয়াটেল',s:'r16'},
-  {date:'2026-07-07',gH:17,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৭',v:'আটলান্টা',s:'r16'},
-  {date:'2026-07-08',gH:0,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৮',v:'ভ্যানকুভার',s:'r16'},
-  {date:'2026-07-09',gH:21,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ১',v:'বোস্টন',s:'qf'},
-  {date:'2026-07-10',gH:23,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ২',v:'লস অ্যাঞ্জেলেস',s:'qf'},
-  {date:'2026-07-11',gH:22,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ৩',v:'মিয়ামি',s:'qf'},
-  {date:'2026-07-12',gH:3,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ৪',v:'কানসাস সিটি',s:'qf'},
-  {date:'2026-07-14',gH:21,gM:0,t1:'সেমিফাইনাল',t2:'ম্যাচ ১',v:'ড্যালাস',s:'sf'},
-  {date:'2026-07-15',gH:20,gM:0,t1:'সেমিফাইনাল',t2:'ম্যাচ ২',v:'আটলান্টা',s:'sf'},
-  {date:'2026-07-18',gH:22,gM:0,t1:'তৃতীয় স্থান নির্ধারণ',t2:'',v:'মিয়ামি',s:'bronze'},
-  {date:'2026-07-19',gH:20,gM:0,t1:'🏆 ফাইনাল',t2:'',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'final'},
+const RAW=[
+  // ─── গ্রুপ পর্যায় ───
+  {date:'2026-06-11',gH:21,gM:0, t1:T('A',0),t2:T('A',2),v:'মেক্সিকো সিটি',s:'group',g:'A'},
+  {date:'2026-06-12',gH:4, gM:0, t1:T('A',1),t2:T('A',3),v:'গুয়াদালাহারা', s:'group',g:'A'},
+  {date:'2026-06-12',gH:20,gM:0, t1:T('B',0),t2:T('B',2),v:'টরন্টো',        s:'group',g:'B'},
+  {date:'2026-06-13',gH:5, gM:0, t1:T('D',0),t2:T('D',2),v:'লস অ্যাঞ্জেলেস',s:'group',g:'D'},
+  {date:'2026-06-13',gH:23,gM:0, t1:T('B',2),t2:T('B',1),v:'সান ফ্রান্সিসকো',s:'group',g:'B'},
+  {date:'2026-06-13',gH:23,gM:0, t1:T('C',0),t2:T('C',1),v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'C'},
+  {date:'2026-06-14',gH:2, gM:0, t1:T('C',3),t2:T('C',2),v:'বোস্টন',        s:'group',g:'C'},
+  {date:'2026-06-14',gH:8, gM:0, t1:T('D',1),t2:T('D',3),v:'ভ্যানকুভার',    s:'group',g:'D'},
+  {date:'2026-06-14',gH:19,gM:0, t1:T('E',0),t2:T('E',3),v:'হিউস্টন',       s:'group',g:'E'},
+  {date:'2026-06-14',gH:22,gM:0, t1:T('F',0),t2:T('F',1),v:'ড্যালাস',        s:'group',g:'F'},
+  {date:'2026-06-15',gH:0, gM:0, t1:T('E',2),t2:T('E',1),v:'ফিলাডেলফিয়া',  s:'group',g:'E'},
+  {date:'2026-06-15',gH:4, gM:0, t1:T('F',3),t2:T('F',2),v:'মন্তেরে',       s:'group',g:'F'},
+  {date:'2026-06-15',gH:17,gM:0, t1:T('H',0),t2:T('H',3),v:'আটলান্টা',      s:'group',g:'H'},
+  {date:'2026-06-15',gH:23,gM:0, t1:T('G',0),t2:T('G',2),v:'ভ্যানকুভার',    s:'group',g:'G'},
+  {date:'2026-06-15',gH:23,gM:0, t1:T('H',2),t2:T('H',1),v:'মিয়ামি',       s:'group',g:'H'},
+  {date:'2026-06-16',gH:5, gM:0, t1:T('G',1),t2:T('G',3),v:'লস অ্যাঞ্জেলেস',s:'group',g:'G'},
+  {date:'2026-06-16',gH:20,gM:0, t1:T('I',0),t2:T('I',1),v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'I'},
+  {date:'2026-06-16',gH:23,gM:0, t1:T('I',3),t2:T('I',2),v:'বোস্টন',        s:'group',g:'I'},
+  {date:'2026-06-17',gH:3, gM:0, t1:T('J',0),t2:T('J',2),v:'কানসাস সিটি',  s:'group',g:'J'},
+  {date:'2026-06-17',gH:8, gM:0, t1:T('J',1),t2:T('J',3),v:'সান ফ্রান্সিসকো',s:'group',g:'J'},
+  {date:'2026-06-17',gH:19,gM:0, t1:T('K',0),t2:T('K',3),v:'হিউস্টন',       s:'group',g:'K'},
+  {date:'2026-06-17',gH:22,gM:0, t1:T('L',0),t2:T('L',1),v:'ড্যালাস',        s:'group',g:'L'},
+  {date:'2026-06-18',gH:0, gM:0, t1:T('L',3),t2:T('L',2),v:'টরন্টো',        s:'group',g:'L'},
+  {date:'2026-06-18',gH:4, gM:0, t1:T('K',2),t2:T('K',1),v:'মেক্সিকো সিটি', s:'group',g:'K'},
+  {date:'2026-06-18',gH:17,gM:0, t1:T('A',3),t2:T('A',2),v:'আটলান্টা',      s:'group',g:'A'},
+  {date:'2026-06-18',gH:23,gM:0, t1:T('B',1),t2:T('B',3),v:'লস অ্যাঞ্জেলেস',s:'group',g:'B'},
+  {date:'2026-06-19',gH:2, gM:0, t1:T('B',0),t2:T('B',2),v:'ভ্যানকুভার',    s:'group',g:'B'},
+  {date:'2026-06-19',gH:3, gM:0, t1:T('A',0),t2:T('A',1),v:'গুয়াদালাহারা', s:'group',g:'A'},
+  {date:'2026-06-19',gH:23,gM:0, t1:T('C',2),t2:T('C',1),v:'বোস্টন',        s:'group',g:'C'},
+  {date:'2026-06-19',gH:23,gM:0, t1:T('D',0),t2:T('D',1),v:'সিয়াটেল',      s:'group',g:'D'},
+  {date:'2026-06-20',gH:2, gM:0, t1:T('C',0),t2:T('C',3),v:'ফিলাডেলফিয়া', s:'group',g:'C'},
+  {date:'2026-06-20',gH:8, gM:0, t1:T('D',3),t2:T('D',2),v:'সান ফ্রান্সিসকো',s:'group',g:'D'},
+  {date:'2026-06-20',gH:19,gM:0, t1:T('F',0),t2:T('F',3),v:'হিউস্টন',       s:'group',g:'F'},
+  {date:'2026-06-20',gH:21,gM:0, t1:T('E',0),t2:T('E',2),v:'টরন্টো',        s:'group',g:'E'},
+  {date:'2026-06-21',gH:4, gM:0, t1:T('E',1),t2:T('E',3),v:'কানসাস সিটি',  s:'group',g:'E'},
+  {date:'2026-06-21',gH:6, gM:0, t1:T('F',2),t2:T('F',1),v:'মন্তেরে',       s:'group',g:'F'},
+  {date:'2026-06-21',gH:17,gM:0, t1:T('H',0),t2:T('H',2),v:'আটলান্টা',      s:'group',g:'H'},
+  {date:'2026-06-21',gH:23,gM:0, t1:T('G',0),t2:T('G',1),v:'লস অ্যাঞ্জেলেস',s:'group',g:'G'},
+  {date:'2026-06-21',gH:23,gM:0, t1:T('H',1),t2:T('H',3),v:'মিয়ামি',       s:'group',g:'H'},
+  {date:'2026-06-22',gH:5, gM:0, t1:T('G',3),t2:T('G',2),v:'ভ্যানকুভার',    s:'group',g:'G'},
+  {date:'2026-06-22',gH:19,gM:0, t1:T('J',0),t2:T('J',1),v:'ড্যালাস',        s:'group',g:'J'},
+  {date:'2026-06-22',gH:22,gM:0, t1:T('I',0),t2:T('I',3),v:'ফিলাডেলফিয়া', s:'group',g:'I'},
+  {date:'2026-06-23',gH:1, gM:0, t1:T('I',2),t2:T('I',1),v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'I'},
+  {date:'2026-06-23',gH:7, gM:0, t1:T('J',3),t2:T('J',2),v:'সান ফ্রান্সিসকো',s:'group',g:'J'},
+  {date:'2026-06-23',gH:19,gM:0, t1:T('K',0),t2:T('K',2),v:'হিউস্টন',       s:'group',g:'K'},
+  {date:'2026-06-23',gH:21,gM:0, t1:T('L',0),t2:T('L',3),v:'বোস্টন',        s:'group',g:'L'},
+  {date:'2026-06-24',gH:0, gM:0, t1:T('L',2),t2:T('L',1),v:'টরন্টো',        s:'group',g:'L'},
+  {date:'2026-06-24',gH:4, gM:0, t1:T('K',1),t2:T('K',3),v:'গুয়াদালাহারা', s:'group',g:'K'},
+  {date:'2026-06-24',gH:23,gM:0, t1:T('B',1),t2:T('B',0),v:'ভ্যানকুভার',    s:'group',g:'B'},
+  {date:'2026-06-24',gH:23,gM:0, t1:T('B',3),t2:T('B',2),v:'সিয়াটেল',      s:'group',g:'B'},
+  {date:'2026-06-24',gH:23,gM:0, t1:T('C',2),t2:T('C',0),v:'মিয়ামি',       s:'group',g:'C'},
+  {date:'2026-06-24',gH:23,gM:0, t1:T('C',1),t2:T('C',3),v:'আটলান্টা',      s:'group',g:'C'},
+  {date:'2026-06-25',gH:3, gM:0, t1:T('A',3),t2:T('A',0),v:'মেক্সিকো সিটি', s:'group',g:'A'},
+  {date:'2026-06-25',gH:3, gM:0, t1:T('A',2),t2:T('A',1),v:'মন্তেরে',       s:'group',g:'A'},
+  {date:'2026-06-25',gH:21,gM:0, t1:T('E',1),t2:T('E',0),v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'E'},
+  {date:'2026-06-25',gH:21,gM:0, t1:T('E',3),t2:T('E',2),v:'ফিলাডেলফিয়া', s:'group',g:'E'},
+  {date:'2026-06-26',gH:1, gM:0, t1:T('F',1),t2:T('F',3),v:'ড্যালাস',        s:'group',g:'F'},
+  {date:'2026-06-26',gH:1, gM:0, t1:T('F',2),t2:T('F',0),v:'কানসাস সিটি',  s:'group',g:'F'},
+  {date:'2026-06-26',gH:6, gM:0, t1:T('D',3),t2:T('D',0),v:'লস অ্যাঞ্জেলেস',s:'group',g:'D'},
+  {date:'2026-06-26',gH:6, gM:0, t1:T('D',2),t2:T('D',1),v:'সান ফ্রান্সিসকো',s:'group',g:'D'},
+  {date:'2026-06-26',gH:20,gM:0, t1:T('I',2),t2:T('I',0),v:'বোস্টন',        s:'group',g:'I'},
+  {date:'2026-06-26',gH:20,gM:0, t1:T('I',1),t2:T('I',3),v:'টরন্টো',        s:'group',g:'I'},
+  {date:'2026-06-27',gH:2, gM:0, t1:T('H',3),t2:T('H',2),v:'হিউস্টন',       s:'group',g:'H'},
+  {date:'2026-06-27',gH:2, gM:0, t1:T('H',1),t2:T('H',0),v:'গুয়াদালাহারা', s:'group',g:'H'},
+  {date:'2026-06-27',gH:7, gM:0, t1:T('G',2),t2:T('G',1),v:'সিয়াটেল',      s:'group',g:'G'},
+  {date:'2026-06-27',gH:7, gM:0, t1:T('G',3),t2:T('G',0),v:'ভ্যানকুভার',    s:'group',g:'G'},
+  {date:'2026-06-27',gH:22,gM:0, t1:T('L',2),t2:T('L',0),v:'নিউ ইয়র্ক-নিউ জার্সি',s:'group',g:'L'},
+  {date:'2026-06-27',gH:22,gM:0, t1:T('L',1),t2:T('L',3),v:'ফিলাডেলফিয়া', s:'group',g:'L'},
+  {date:'2026-06-28',gH:2, gM:30,t1:T('K',1),t2:T('K',0),v:'মিয়ামি',       s:'group',g:'K'},
+  {date:'2026-06-28',gH:2, gM:30,t1:T('K',3),t2:T('K',2),v:'আটলান্টা',      s:'group',g:'K'},
+  {date:'2026-06-28',gH:4, gM:0, t1:T('J',2),t2:T('J',1),v:'কানসাস সিটি',  s:'group',g:'J'},
+  {date:'2026-06-28',gH:4, gM:0, t1:T('J',3),t2:T('J',0),v:'ড্যালাস',        s:'group',g:'J'},
+  // ─── রাউন্ড অব ৩২ ───
+  {date:'2026-06-28',gH:23,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১', t2:'',v:'লস অ্যাঞ্জেলেস',s:'r32'},
+  {date:'2026-06-29',gH:19,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ২', t2:'',v:'হিউস্টন',      s:'r32'},
+  {date:'2026-06-29',gH:22,gM:30,t1:'রাউন্ড অব ৩২ — ম্যাচ ৩', t2:'',v:'বোস্টন',        s:'r32'},
+  {date:'2026-06-30',gH:3, gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ৪', t2:'',v:'মন্তেরে',       s:'r32'},
+  {date:'2026-06-30',gH:19,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ৫', t2:'',v:'ড্যালাস',        s:'r32'},
+  {date:'2026-06-30',gH:22,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ৬', t2:'',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'r32'},
+  {date:'2026-07-01',gH:3, gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ৭', t2:'',v:'মেক্সিকো সিটি', s:'r32'},
+  {date:'2026-07-01',gH:17,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ৮', t2:'',v:'আটলান্টা',      s:'r32'},
+  {date:'2026-07-01',gH:0, gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ৯', t2:'',v:'সিয়াটেল',      s:'r32'},
+  {date:'2026-07-01',gH:4, gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১০',t2:'',v:'সান ফ্রান্সিসকো',s:'r32'},
+  {date:'2026-07-02',gH:23,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১১',t2:'',v:'লস অ্যাঞ্জেলেস',s:'r32'},
+  {date:'2026-07-03',gH:0, gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১২',t2:'',v:'টরন্টো',        s:'r32'},
+  {date:'2026-07-03',gH:7, gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১৩',t2:'',v:'ভ্যানকুভার',    s:'r32'},
+  {date:'2026-07-03',gH:21,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১৪',t2:'',v:'ড্যালাস',        s:'r32'},
+  {date:'2026-07-03',gH:23,gM:0, t1:'রাউন্ড অব ৩২ — ম্যাচ ১৫',t2:'',v:'মিয়ামি',       s:'r32'},
+  {date:'2026-07-04',gH:3, gM:30,t1:'রাউন্ড অব ৩২ — ম্যাচ ১৬',t2:'',v:'কানসাস সিটি',  s:'r32'},
+  // ─── রাউন্ড অব ১৬ ───
+  {date:'2026-07-04',gH:19,gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ১',t2:'',v:'হিউস্টন',        s:'r16'},
+  {date:'2026-07-04',gH:22,gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ২',t2:'',v:'ফিলাডেলফিয়া',  s:'r16'},
+  {date:'2026-07-05',gH:21,gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ৩',t2:'',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'r16'},
+  {date:'2026-07-06',gH:2, gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ৪',t2:'',v:'মেক্সিকো সিটি',  s:'r16'},
+  {date:'2026-07-06',gH:21,gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ৫',t2:'',v:'ড্যালাস',          s:'r16'},
+  {date:'2026-07-07',gH:4, gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ৬',t2:'',v:'সিয়াটেল',        s:'r16'},
+  {date:'2026-07-07',gH:17,gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ৭',t2:'',v:'আটলান্টা',        s:'r16'},
+  {date:'2026-07-08',gH:0, gM:0, t1:'রাউন্ড অব ১৬ — ম্যাচ ৮',t2:'',v:'ভ্যানকুভার',      s:'r16'},
+  // ─── কোয়ার্টার ফাইনাল ───
+  {date:'2026-07-09',gH:21,gM:0, t1:'কোয়ার্টার ফাইনাল — ম্যাচ ১',t2:'',v:'বোস্টন',      s:'qf'},
+  {date:'2026-07-10',gH:23,gM:0, t1:'কোয়ার্টার ফাইনাল — ম্যাচ ২',t2:'',v:'লস অ্যাঞ্জেলেস',s:'qf'},
+  {date:'2026-07-11',gH:22,gM:0, t1:'কোয়ার্টার ফাইনাল — ম্যাচ ৩',t2:'',v:'মিয়ামি',     s:'qf'},
+  {date:'2026-07-12',gH:3, gM:0, t1:'কোয়ার্টার ফাইনাল — ম্যাচ ৪',t2:'',v:'কানসাস সিটি',s:'qf'},
+  // ─── সেমিফাইনাল ───
+  {date:'2026-07-14',gH:21,gM:0, t1:'সেমিফাইনাল — ম্যাচ ১',t2:'',v:'ড্যালাস',  s:'sf'},
+  {date:'2026-07-15',gH:20,gM:0, t1:'সেমিফাইনাল — ম্যাচ ২',t2:'',v:'আটলান্টা', s:'sf'},
+  // ─── তৃতীয় স্থান + ফাইনাল ───
+  {date:'2026-07-18',gH:22,gM:0, t1:'তৃতীয় স্থান নির্ধারণ',t2:'',v:'মিয়ামি',                  s:'bronze'},
+  {date:'2026-07-19',gH:20,gM:0, t1:'🏆 ফাইনাল',           t2:'',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'final'},
 ];
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
+const MN=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+const DN=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
 
-const M=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
-const D=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+function getBDT(m){let h=m.gH+6,min=m.gM;if(h>=24)h-=24;return`${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`}
+function getBDDate(m){const d=new Date(m.date+'T00:00:00Z');if(m.gH+6>=24)d.setUTCDate(d.getUTCDate()+1);return d.toISOString().slice(0,10)}
+function todayBDT(){const n=new Date();const b=new Date(n.getTime()+6*3600*1000);return b.toISOString().slice(0,10)}
+function fmtDate(s){const d=new Date(s+'T12:00:00Z');return`${DN[d.getUTCDay()]}, ${d.getUTCDate()} ${MN[d.getUTCMonth()]} ${d.getUTCFullYear()}`}
+const SLB={group:'গ্রুপ পর্যায়',r32:'রাউন্ড অব ৩২',r16:'রাউন্ড অব ১৬',qf:'কোয়ার্টার ফাইনাল',sf:'সেমিফাইনাল',bronze:'তৃতীয় স্থান',final:'ফাইনাল'};
 
-// BDT = UTC + 6h
-function getBDT(m) {
-  let h = m.gH + 6, min = m.gM;
-  if (h >= 24) h -= 24;
-  return `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
-}
-// BDT date (may be next calendar day if gH+6 crosses midnight)
-function getBDDate(m) {
-  const d = new Date(m.date + 'T00:00:00Z');
-  if (m.gH + 6 >= 24) d.setUTCDate(d.getUTCDate() + 1);
-  return d.toISOString().slice(0, 10);
-}
-// Current date in BDT
-function todayBDT() {
-  const now = new Date();
-  const bd = new Date(now.getTime() + 6 * 3600 * 1000);
-  return bd.toISOString().slice(0, 10);
-}
-function fmtDate(str) {
-  const d = new Date(str + 'T12:00:00Z');
-  return `${D[d.getUTCDay()]}, ${d.getUTCDate()} ${M[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
-}
-const STAGE_LBL = {group:'গ্রুপ পর্যায়',r32:'রাউন্ড অব ৩২',r16:'রাউন্ড অব ১৬',qf:'কোয়ার্টার ফাইনাল',sf:'সেমিফাইনাল',bronze:'তৃতীয় স্থান',final:'ফাইনাল'};
-
-// ─── Tabs ────────────────────────────────────────────────────────────────────
-
-let currentTab = 'schedule';
-let activeFilter = '';
-
-function switchTab(tab) {
-  currentTab = tab;
-  ['schedule','groups','teams','stadiums'].forEach(t => {
-    document.getElementById('tab-' + t).classList.toggle('active', t === tab);
-  });
-  const fr = document.getElementById('filterRow');
-  fr.style.display = tab === 'schedule' ? 'flex' : 'none';
-  document.getElementById('searchInput').placeholder =
-    tab === 'schedule' ? 'দল বা ভেন্যু খুঁজুন...' :
-    tab === 'groups'   ? 'গ্রুপ বা দল খুঁজুন...' :
-    tab === 'teams'    ? 'দলের নাম খুঁজুন...' : 'স্টেডিয়াম বা শহর খুঁজুন...';
+// ─── Tabs ─────────────────────────────────────────────────────────────────────
+let currentTab='schedule', activeFilter='';
+function switchTab(t){
+  currentTab=t;
+  ['schedule','groups','teams','stadiums'].forEach(x=>document.getElementById('tab-'+x).classList.toggle('active',x===t));
+  document.getElementById('filterRow').style.display=t==='schedule'?'flex':'none';
+  document.getElementById('searchInput').placeholder=
+    t==='schedule'?'দল বা ভেন্যু খুঁজুন...':t==='groups'?'গ্রুপ বা দল খুঁজুন...':
+    t==='teams'?'দলের নাম খুঁজুন...':'স্টেডিয়াম বা শহর খুঁজুন...';
   renderContent();
 }
 
-// ─── Filter chips ─────────────────────────────────────────────────────────────
+// ─── Filter chips ──────────────────────────────────────────────────────────────
+const CHIPS=[{id:'',label:'সব'},{id:'group',label:'গ্রুপ পর্যায়'},{id:'r32',label:'রাউন্ড ৩২'},
+  {id:'r16',label:'রাউন্ড ১৬'},{id:'qf',label:'কোয়ার্টার'},{id:'sf',label:'সেমি'},{id:'final',label:'ফাইনাল'}];
+document.getElementById('filterRow').innerHTML=CHIPS.map(c=>`<button class="chip${c.id===activeFilter?' active':''}" onclick="setFilter('${c.id}')">${c.label}</button>`).join('');
+function setFilter(id){activeFilter=id;document.querySelectorAll('.chip').forEach((c,i)=>c.classList.toggle('active',CHIPS[i].id===id));renderContent()}
 
-const CHIPS = [
-  {id:'',label:'সব'},
-  {id:'group',label:'গ্রুপ পর্যায়'},
-  {id:'r32',label:'রাউন্ড ৩২'},
-  {id:'r16',label:'রাউন্ড ১৬'},
-  {id:'qf',label:'কোয়ার্টার'},
-  {id:'sf',label:'সেমি'},
-  {id:'final',label:'ফাইনাল'},
-];
-document.getElementById('filterRow').innerHTML = CHIPS.map(c =>
-  `<button class="chip${c.id===activeFilter?' active':''}" onclick="setFilter('${c.id}')">${c.label}</button>`
-).join('');
-
-function setFilter(id) {
-  activeFilter = id;
-  document.querySelectorAll('.chip').forEach((c, i) => c.classList.toggle('active', CHIPS[i].id === id));
-  renderContent();
-}
-
-// ─── Render dispatcher ──────────────────────────────────────────────────────
-
-function renderContent() {
-  const q = document.getElementById('searchInput').value.toLowerCase().trim();
-  if (currentTab === 'schedule') renderList(q);
-  else if (currentTab === 'groups') renderGroups(q);
-  else if (currentTab === 'teams') renderTeams(q);
+// ─── Render dispatcher ────────────────────────────────────────────────────────
+function renderContent(){
+  const q=document.getElementById('searchInput').value.toLowerCase().trim();
+  if(currentTab==='schedule')renderList(q);
+  else if(currentTab==='groups')renderGroups(q);
+  else if(currentTab==='teams')renderTeams(q);
   else renderStadiums(q);
 }
 
-// ─── Schedule tab ────────────────────────────────────────────────────────────
-
-function renderList(q) {
-  const today = todayBDT();
-
-  const todayMs = RAW.filter(m => getBDDate(m) === today);
-  const tb = document.getElementById('todayBanner');
-  if (todayMs.length) {
-    tb.innerHTML = `<div class="today-banner"><div class="live-dot"></div><div class="today-text">আজ <span class="today-count">${todayMs.length}টি</span> ম্যাচ আছে — BDT অনুযায়ী</div></div>`;
+// ─── Schedule ────────────────────────────────────────────────────────────────
+function renderList(q){
+  const today=todayBDT();
+  const todayMs=RAW.filter(m=>getBDDate(m)===today);
+  const tb=document.getElementById('todayBanner');
+  if(todayMs.length){
+    tb.innerHTML=`<div class="today-banner"><div class="live-dot"></div><div class="today-text">আজ <span class="today-count">${todayMs.length}টি</span> ম্যাচ — BDT সময় অনুযায়ী</div></div>`;
   } else {
-    const s = '2026-06-11', e = '2026-07-19';
-    tb.innerHTML = `<div class="no-today">${today < s ? 'টুর্নামেন্ট শুরু হবে ১১ জুন ২০২৬ ⏳' : today > e ? 'টুর্নামেন্ট শেষ 🏆' : 'আজ কোনো ম্যাচ নেই'}</div>`;
+    const s='2026-06-11',e='2026-07-19';
+    tb.innerHTML=`<div class="no-today">${today<s?'টুর্নামেন্ট শুরু হবে ১১ জুন ২০২৬ ⏳':today>e?'টুর্নামেন্ট শেষ হয়েছে 🏆':'আজ কোনো ম্যাচ নেই'}</div>`;
   }
-
-  const filtered = RAW.filter(m => {
-    const txt = (m.t1 + m.t2 + m.v + (m.g || '')).toLowerCase();
-    return (!q || txt.includes(q)) && (!activeFilter || m.s === activeFilter);
+  const filtered=RAW.filter(m=>{
+    const txt=(m.t1+m.t2+m.v+(m.g||'')).toLowerCase();
+    return(!q||txt.includes(q))&&(!activeFilter||m.s===activeFilter);
   });
-
-  const byDay = {};
-  filtered.forEach(m => { const k = getBDDate(m); (byDay[k] = byDay[k] || []).push(m); });
-  const days = Object.keys(byDay).sort();
-
-  const el = document.getElementById('mainContent');
-  if (!days.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কোনো ম্যাচ পাওয়া যায়নি</p></div>'; return; }
-
-  el.innerHTML = days.map(day => {
-    const isToday = day === today;
-    const ms = byDay[day].sort((a, b) => getBDT(a).localeCompare(getBDT(b)));
-    return `<div class="day-section">
+  const byDay={};
+  filtered.forEach(m=>{const k=getBDDate(m);(byDay[k]=byDay[k]||[]).push(m);});
+  const days=Object.keys(byDay).sort();
+  const el=document.getElementById('mainContent');
+  if(!days.length){el.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p>কোনো ম্যাচ পাওয়া যায়নি</p></div>';return;}
+  el.innerHTML=days.map(day=>{
+    const isToday=day===today;
+    const ms=byDay[day].sort((a,b)=>getBDT(a).localeCompare(getBDT(b)));
+    return`<div class="day-section">
       <div class="day-header">
         <span class="day-name${isToday?' hl':''}">${fmtDate(day)}${isToday?'<span class="today-tag">আজ</span>':''}</span>
         <span class="day-count">${ms.length}টি</span>
       </div>
-      ${ms.map(m => {
-        const bdt = getBDT(m);
-        const gmtStr = `GMT+0 ${String(m.gH).padStart(2,'0')}:${String(m.gM).padStart(2,'0')}`;
-        const isFinal = m.s === 'final';
-        const isTdy = getBDDate(m) === today;
-        const teams = m.t2 ? `${m.t1}<span class="vs">বনাম</span>${m.t2}` : m.t1;
-        return `<div class="match-card${isFinal?' is-final':''}${isTdy?' is-today':''}">
+      ${ms.map(m=>{
+        const bdt=getBDT(m);
+        const isFinal=m.s==='final';
+        const isTdy=getBDDate(m)===today;
+        const teams=m.t2?`${m.t1}<span class="vs">বনাম</span>${m.t2}`:m.t1;
+        return`<div class="match-card${isFinal?' is-final':''}${isTdy?' is-today':''}">
           <div class="time-col">
             <div class="bd-time">${bdt}</div>
-            <div class="gmt-label">BDT</div>
-            <div class="gmt-time">${gmtStr}</div>
+            <div class="bdt-lbl">BDT</div>
           </div>
           <div>
             <div class="teams-row">${teams}</div>
-            <div class="venue-row">
-              <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="opacity:.5;flex-shrink:0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              ${m.v}
-            </div>
-            <div class="badges">
-              <span class="badge badge-${m.s}">${STAGE_LBL[m.s]||m.s}</span>
-              ${m.g ? `<span class="badge badge-grp">গ্রুপ ${m.g}</span>` : ''}
-            </div>
+            <div class="venue-row"><svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="opacity:.5;flex-shrink:0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>${m.v}</div>
+            <div class="badges"><span class="badge badge-${m.s}">${SLB[m.s]||m.s}</span>${m.g?`<span class="badge badge-grp">গ্রুপ ${m.g}</span>`:''}</div>
           </div>
         </div>`;
       }).join('')}
     </div>`;
   }).join('');
-
-  if (!window._scrolled) {
-    window._scrolled = true;
-    setTimeout(() => { const f = document.querySelector('.is-today'); if(f) f.scrollIntoView({behavior:'smooth',block:'center'}); }, 300);
-  }
+  if(!window._scrolled){window._scrolled=true;setTimeout(()=>{const f=document.querySelector('.is-today');if(f)f.scrollIntoView({behavior:'smooth',block:'center'});},300);}
   scheduleTodayNotif(todayMs);
 }
 
-// ─── Groups tab ──────────────────────────────────────────────────────────────
-
-let openGroups = new Set(Object.keys(GROUPS)); // all open by default
-
-function renderGroups(q) {
-  document.getElementById('todayBanner').innerHTML = '';
-  const el = document.getElementById('mainContent');
-  const entries = Object.entries(GROUPS).filter(([gk, teams]) =>
-    !q || gk.toLowerCase().includes(q) || teams.some(t => t.toLowerCase().includes(q))
-  );
-  if (!entries.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কিছু পাওয়া যায়নি</p></div>'; return; }
-
-  el.innerHTML = '<div style="padding:10px 0">' + entries.map(([gk, teams]) => {
-    const isOpen = openGroups.has(gk);
-    const filteredTeams = q ? teams.filter(t => t.toLowerCase().includes(q) || gk.toLowerCase().includes(q)) : teams;
-    return `<div class="grp-block">
-      <div class="grp-header${isOpen?' open':''}" onclick="toggleGroup('${gk}')">
-        <span>গ্রুপ ${gk} <span style="color:var(--muted);font-weight:400;font-size:11px;margin-left:6px">${filteredTeams.length} দল</span></span>
+// ─── Groups ──────────────────────────────────────────────────────────────────
+let openGrps=new Set(Object.keys(GROUPS));
+function renderGroups(q){
+  document.getElementById('todayBanner').innerHTML='';
+  const el=document.getElementById('mainContent');
+  const entries=Object.entries(GROUPS).filter(([gk,teams])=>!q||gk.toLowerCase().includes(q)||teams.some(t=>(t.n+t.f).toLowerCase().includes(q)));
+  if(!entries.length){el.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p>কিছু পাওয়া যায়নি</p></div>';return;}
+  el.innerHTML='<div style="padding:10px 0">'+entries.map(([gk,teams])=>{
+    const isOpen=openGrps.has(gk);
+    const ft=q?teams.filter(t=>(t.n+t.f).toLowerCase().includes(q)||gk.toLowerCase().includes(q)):teams;
+    return`<div class="grp-block">
+      <div class="grp-header${isOpen?' open':''}" onclick="toggleGrp('${gk}')">
+        <span>গ্রুপ ${gk} <span style="color:var(--muted);font-weight:400;font-size:11px;margin-left:6px">${ft.length} দল</span></span>
         <span class="arr">▼</span>
       </div>
       <div class="grp-teams${isOpen?' open':''}" id="grp-${gk}">
-        ${filteredTeams.map(t => {
-          const parts = t.split(' ');
-          const flag = parts[parts.length - 1];
-          const name = parts.slice(0, -1).join(' ');
-          return `<div class="team-row"><span class="team-flag">${flag}</span><span>${name}</span></div>`;
-        }).join('')}
+        ${ft.map(t=>`<div class="team-row"><span class="team-flag">${t.f}</span><span>${t.n}${t.host?' 🏠':''}</span></div>`).join('')}
       </div>
     </div>`;
-  }).join('') + '</div>';
+  }).join('')+'</div>';
 }
+function toggleGrp(gk){if(openGrps.has(gk))openGrps.delete(gk);else openGrps.add(gk);renderGroups(document.getElementById('searchInput').value.toLowerCase().trim())}
 
-function toggleGroup(gk) {
-  if (openGroups.has(gk)) openGroups.delete(gk); else openGroups.add(gk);
-  renderGroups(document.getElementById('searchInput').value.toLowerCase().trim());
-}
-
-// ─── Teams tab ───────────────────────────────────────────────────────────────
-
-function renderTeams(q) {
-  document.getElementById('todayBanner').innerHTML = '';
-  const el = document.getElementById('mainContent');
-  const filtered = ALL_TEAMS.filter(({team}) => !q || team.toLowerCase().includes(q));
-  if (!filtered.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কোনো দল পাওয়া যায়নি</p></div>'; return; }
-  el.innerHTML = `<div style="padding:10px 0">
+// ─── Teams ────────────────────────────────────────────────────────────────────
+function renderTeams(q){
+  document.getElementById('todayBanner').innerHTML='';
+  const el=document.getElementById('mainContent');
+  const all=Object.entries(GROUPS).flatMap(([g,ts])=>ts.map(t=>({...t,group:g})));
+  const filtered=all.filter(t=>!q||(t.n+t.f).toLowerCase().includes(q));
+  if(!filtered.length){el.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p>কোনো দল পাওয়া যায়নি</p></div>';return;}
+  el.innerHTML=`<div style="padding:10px 0">
     <div style="font-size:12px;color:var(--muted);padding:4px 2px 10px">মোট ${filtered.length}টি দল</div>
     <div class="teams-grid">
-      ${filtered.map(({team, group}) => {
-        const parts = team.split(' ');
-        const flag = parts[parts.length - 1];
-        const name = parts.slice(0, -1).join(' ');
-        return `<div class="team-card">
-          <div class="flag">${flag}</div>
-          <div class="info">
-            <div class="name">${name}</div>
-            <div class="grp">গ্রুপ ${group}</div>
-          </div>
-        </div>`;
-      }).join('')}
+      ${filtered.map(t=>`<div class="team-card"><div class="flag">${t.f}</div><div><div class="tname">${t.n}${t.host?' 🏠':''}</div><div class="tgrp">গ্রুপ ${t.group}</div></div></div>`).join('')}
     </div>
   </div>`;
 }
 
-// ─── Stadiums tab ─────────────────────────────────────────────────────────────
-
-function renderStadiums(q) {
-  document.getElementById('todayBanner').innerHTML = '';
-  const el = document.getElementById('mainContent');
-  const filtered = STADIUMS.filter(s => !q || s.name.toLowerCase().includes(q) || s.city.toLowerCase().includes(q) || s.country.toLowerCase().includes(q));
-  if (!filtered.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কিছু পাওয়া যায়নি</p></div>'; return; }
-  el.innerHTML = `<div style="padding:10px 0">
+// ─── Stadiums ────────────────────────────────────────────────────────────────
+function renderStadiums(q){
+  document.getElementById('todayBanner').innerHTML='';
+  const el=document.getElementById('mainContent');
+  const filtered=STADIUMS.filter(s=>!q||(s.name+s.city+s.country).toLowerCase().includes(q));
+  if(!filtered.length){el.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p>কিছু পাওয়া যায়নি</p></div>';return;}
+  el.innerHTML=`<div style="padding:10px 0">
     <div style="font-size:12px;color:var(--muted);padding:4px 2px 10px">মোট ${filtered.length}টি স্টেডিয়াম</div>
-    ${filtered.map(s => `<div class="stadium-card">
-      <div class="stadium-icon">🏟️</div>
+    ${filtered.map(s=>`<div class="stadium-card">
+      <span style="font-size:22px">🏟️</span>
       <div class="stadium-info">
-        <div class="name">${s.name}</div>
-        <div class="city">📍 ${s.city} &nbsp;·&nbsp; ধারণক্ষমতা: ${s.cap}</div>
+        <div class="sname">${s.full}</div>
+        <div class="scity">📍 ${s.city} &nbsp;·&nbsp; ধারণক্ষমতা: ${s.cap}</div>
       </div>
       <span class="country-badge ${s.cls}">${s.country}</span>
     </div>`).join('')}
@@ -596,66 +536,26 @@ function renderStadiums(q) {
 }
 
 // ─── Notification ─────────────────────────────────────────────────────────────
-
-let notifOn = localStorage.getItem('notif') === '1';
-function updateNotifBtn() {
-  const b = document.getElementById('notifBtn');
-  document.getElementById('notifIcon').textContent = notifOn ? '🔔' : '🔕';
-  document.getElementById('notifTxt').textContent = notifOn ? 'চালু' : 'Notification';
-  b.classList.toggle('on', notifOn);
+let notifOn=localStorage.getItem('notif')==='1';
+function updateNotifBtn(){const b=document.getElementById('notifBtn');document.getElementById('notifIcon').textContent=notifOn?'🔔':'🔕';document.getElementById('notifTxt').textContent=notifOn?'চালু':'Notification';b.classList.toggle('on',notifOn)}
+async function toggleNotif(){
+  if(!('Notification' in window)){showToast('এই browser-এ সাপোর্ট নেই');return;}
+  if(notifOn){notifOn=false;localStorage.setItem('notif','0');updateNotifBtn();showToast('নোটিফিকেশন বন্ধ');return;}
+  const p=await Notification.requestPermission();
+  if(p==='granted'){notifOn=true;localStorage.setItem('notif','1');updateNotifBtn();showToast('✅ প্রতিদিন সকাল ৯টায় notification পাবেন!');scheduleTodayNotif(RAW.filter(m=>getBDDate(m)===todayBDT()));}
+  else showToast('❌ Permission দিন Settings থেকে');
 }
-async function toggleNotif() {
-  if (!('Notification' in window)) { showToast('এই browser-এ সাপোর্ট নেই'); return; }
-  if (notifOn) { notifOn = false; localStorage.setItem('notif','0'); updateNotifBtn(); showToast('নোটিফিকেশন বন্ধ'); return; }
-  const p = await Notification.requestPermission();
-  if (p === 'granted') {
-    notifOn = true; localStorage.setItem('notif','1'); updateNotifBtn();
-    showToast('✅ প্রতিদিন সকাল ৯টায় notification পাবেন!');
-    scheduleTodayNotif(RAW.filter(m => getBDDate(m) === todayBDT()));
-  } else { showToast('❌ Permission দিন Settings থেকে'); }
+function scheduleTodayNotif(ms){
+  if(!notifOn||!('serviceWorker' in navigator))return;
+  navigator.serviceWorker.ready.then(r=>{if(r.active)r.active.postMessage({type:'SCHEDULE_NOTIFICATION',matches:ms.map(m=>({time:getBDT(m),teams:m.t2?`${m.t1} বনাম ${m.t2}`:m.t1}))})});
 }
-function scheduleTodayNotif(ms) {
-  if (!notifOn || !('serviceWorker' in navigator)) return;
-  navigator.serviceWorker.ready.then(r => {
-    if (r.active) r.active.postMessage({type:'SCHEDULE_NOTIFICATION', matches: ms.map(m => ({time:getBDT(m), teams:m.t2?`${m.t1} বনাম ${m.t2}`:m.t1}))});
-  });
-}
-
-// ─── Toast ───────────────────────────────────────────────────────────────────
-
-function showToast(msg) {
-  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-// ─── Modal ───────────────────────────────────────────────────────────────────
-
-function closeModal(e) { if (e.target.id === 'modalBg') closeModalDirect(); }
-function closeModalDirect() { document.getElementById('modalBg').classList.remove('open'); }
-
-// ─── Install ─────────────────────────────────────────────────────────────────
-
-let deferredPrompt = null;
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault(); deferredPrompt = e;
-  if (!localStorage.getItem('installDismissed')) document.getElementById('installBanner').classList.remove('hidden');
-});
-function installApp() {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(r => {
-      if (r.outcome === 'accepted') { showToast('✅ Install হচ্ছে!'); localStorage.setItem('installDismissed','1'); }
-      deferredPrompt = null; document.getElementById('installBanner').classList.add('hidden');
-    });
-  }
-}
-
-// ─── Service Worker ──────────────────────────────────────────────────────────
-
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(console.error);
-
-// ─── Init ─────────────────────────────────────────────────────────────────────
-
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function closeModal(e){if(e.target.id==='modalBg')closeModalDirect()}
+function closeModalDirect(){document.getElementById('modalBg').classList.remove('open')}
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;if(!localStorage.getItem('installDismissed'))document.getElementById('installBanner').classList.remove('hidden')});
+function installApp(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(r=>{if(r.outcome==='accepted'){showToast('✅ Install হচ্ছে!');localStorage.setItem('installDismissed','1')}deferredPrompt=null;document.getElementById('installBanner').classList.add('hidden')})}}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(console.error);
 updateNotifBtn();
 renderContent();
 </script>
