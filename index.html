@@ -8,171 +8,146 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="বিশ্বকাপ ২০২৬">
-<meta name="description" content="FIFA World Cup 2026 ম্যাচ সূচি বাংলাদেশ সময়">
-<title>বিশ্বকাপ ২০২৬</title>
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
+<title>বিশ্বকাপ ২০২৬</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --bg:#0a0e1a;
-  --surface:#111827;
-  --card:#1a2235;
-  --border:#1e2d45;
-  --gold:#f5c518;
-  --gold-dim:#a87c0a;
-  --green:#22c55e;
-  --green-dim:#166534;
-  --blue:#3b82f6;
-  --text:#f0f4ff;
-  --muted:#6b7fa3;
-  --accent:#e84040;
-  --pill-group:#1e3a5f;
-  --pill-group-text:#93c5fd;
-  --pill-r32:#2d1b69;
-  --pill-r32-text:#a78bfa;
-  --pill-qf:#3b2000;
-  --pill-qf-text:#fbbf24;
-  --pill-sf:#3b0000;
-  --pill-sf-text:#f87171;
-  --pill-final:#2d1f00;
-  --pill-final-text:#f5c518;
-  --radius:12px;
-  --radius-sm:8px;
+  --bg:#0a0e1a;--surface:#111827;--card:#1a2235;--border:#1e2d45;
+  --gold:#f5c518;--gold-dim:#6b4f00;--green:#22c55e;--green-dim:#14532d;
+  --blue:#3b82f6;--text:#f0f4ff;--muted:#6b7fa3;--radius:12px;--radius-sm:8px;
 }
-html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.5;overflow-x:hidden}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;overflow-x:hidden}
+
 /* Header */
-.app-header{
-  position:sticky;top:0;z-index:100;
-  background:rgba(10,14,26,0.95);
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  padding:14px 16px 10px;
-}
+.app-header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:12px 14px 8px}
 .header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .app-title{display:flex;align-items:center;gap:8px}
-.trophy{font-size:22px}
-.app-title h1{font-size:17px;font-weight:700;letter-spacing:-0.3px;color:var(--text)}
-.app-title .sub{font-size:11px;color:var(--muted);margin-top:1px}
-.notif-btn{
-  background:var(--card);border:1px solid var(--border);
-  color:var(--text);border-radius:20px;
-  padding:7px 13px;font-size:12px;cursor:pointer;
-  display:flex;align-items:center;gap:5px;transition:all .2s;white-space:nowrap
-}
+.app-title h1{font-size:17px;font-weight:700;color:var(--text)}
+.app-title .sub{font-size:10px;color:var(--muted);margin-top:1px}
+.notif-btn{background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:20px;padding:6px 11px;font-size:11px;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .2s}
 .notif-btn.on{background:var(--green-dim);border-color:var(--green);color:var(--green)}
-.notif-btn:active{transform:scale(0.96)}
-/* Search + Filter */
+
+/* Search */
 .search-wrap{position:relative;margin-bottom:8px}
-.search-wrap svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);opacity:.4}
-.search-input{
-  width:100%;background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius-sm);color:var(--text);font-size:14px;
-  padding:9px 12px 9px 34px;outline:none;transition:border-color .2s;
-}
+.search-wrap .ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none}
+.search-input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text);font-size:14px;padding:8px 12px 8px 32px;outline:none}
 .search-input:focus{border-color:var(--blue)}
 .search-input::placeholder{color:var(--muted)}
-.filter-row{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none}
+
+/* Nav tabs */
+.nav-tabs{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border)}
+.nav-tab{flex:1;padding:10px 4px;text-align:center;font-size:12px;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;font-weight:500}
+.nav-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* Stage filter chips */
+.filter-row{display:flex;gap:5px;overflow-x:auto;padding:8px 14px 6px;scrollbar-width:none;background:var(--surface);border-bottom:1px solid var(--border)}
 .filter-row::-webkit-scrollbar{display:none}
-.chip{
-  flex-shrink:0;padding:5px 12px;border-radius:20px;
-  border:1px solid var(--border);background:var(--surface);
-  color:var(--muted);font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;
-}
+.chip{flex-shrink:0;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--muted);font-size:11px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .chip.active{background:var(--gold-dim);border-color:var(--gold);color:var(--gold)}
-/* Stats bar */
-.stats-bar{
-  display:flex;gap:0;
-  background:var(--surface);border-bottom:1px solid var(--border);
-  padding:0;
-}
-.stat-item{flex:1;text-align:center;padding:10px 4px;border-right:1px solid var(--border)}
+
+/* Stats bar — clickable */
+.stats-bar{display:flex;background:var(--surface);border-bottom:1px solid var(--border)}
+.stat-item{flex:1;text-align:center;padding:10px 4px;border-right:1px solid var(--border);cursor:pointer;transition:background .2s;-webkit-tap-highlight-color:transparent}
 .stat-item:last-child{border-right:none}
+.stat-item:active{background:var(--card)}
 .stat-num{font-size:18px;font-weight:700;color:var(--gold)}
 .stat-label{font-size:10px;color:var(--muted);margin-top:1px}
+
 /* Today banner */
-.today-banner{
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  border-bottom:1px solid var(--border);
-  padding:10px 16px;display:flex;align-items:center;gap:8px;
-}
-.live-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.today-banner{background:linear-gradient(135deg,#0f2027,#1a3a2a);border-bottom:1px solid var(--border);padding:9px 14px;display:flex;align-items:center;gap:8px}
+.live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
 .today-text{font-size:13px;color:var(--text)}
 .today-count{font-weight:700;color:var(--gold)}
-/* Main list */
+.no-today{padding:9px 14px;font-size:12px;color:var(--muted);border-bottom:1px solid var(--border)}
+
+/* Main */
 .main{padding:0 12px 80px}
-.day-section{margin-top:16px}
-.day-header{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:6px 4px;margin-bottom:8px;
-  border-bottom:1px solid var(--border);
-}
-.day-name{font-size:13px;font-weight:600;color:var(--muted)}
-.day-name.today-hl{color:var(--gold)}
-.day-count{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2px 8px}
-.today-tag{font-size:10px;background:var(--gold-dim);color:var(--gold);border-radius:20px;padding:2px 7px;margin-left:6px;font-weight:700}
+.day-section{margin-top:14px}
+.day-header{display:flex;justify-content:space-between;align-items:center;padding:4px 2px;margin-bottom:7px;border-bottom:1px solid var(--border)}
+.day-name{font-size:12px;font-weight:600;color:var(--muted)}
+.day-name.hl{color:var(--gold)}
+.today-tag{font-size:9px;background:var(--gold-dim);color:var(--gold);border-radius:20px;padding:2px 6px;margin-left:5px;font-weight:700}
+.day-count{font-size:10px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2px 7px}
+
 /* Match card */
-.match-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:12px 14px;margin-bottom:8px;
-  display:grid;grid-template-columns:56px 1fr;gap:10px;
-  position:relative;overflow:hidden;transition:transform .15s,border-color .15s;
-  cursor:default;
-}
-.match-card:active{transform:scale(0.98)}
-.match-card.is-final{border-color:var(--gold-dim);background:linear-gradient(135deg,#1a2235,#1f2a1a)}
+.match-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px 13px;margin-bottom:7px;display:grid;grid-template-columns:58px 1fr;gap:10px;position:relative;overflow:hidden}
 .match-card.is-today{border-color:var(--green-dim)}
-.match-card.is-today::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green);
-}
-.match-card.is-final::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);
-}
+.match-card.is-today::before,.match-card.is-final::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.match-card.is-today::before{background:var(--green)}
+.match-card.is-final{border-color:var(--gold-dim)}
+.match-card.is-final::before{background:var(--gold)}
 .time-col{text-align:center;padding-top:2px}
-.bd-time{font-size:18px;font-weight:700;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
-.gmt-time{font-size:10px;color:var(--muted);margin-top:3px}
-.teams-row{font-size:14px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:4px}
-.vs{color:var(--muted);font-weight:400;font-size:12px;margin:0 4px}
-.venue-row{font-size:11px;color:var(--muted);margin-bottom:5px;display:flex;align-items:center;gap:4px}
-.pin-icon{opacity:.5;flex-shrink:0}
-.badges{display:flex;flex-wrap:wrap;gap:4px}
-.badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;display:inline-block}
-.badge-group{background:var(--pill-group);color:var(--pill-group-text)}
-.badge-r32{background:var(--pill-r32);color:var(--pill-r32-text)}
+.bd-time{font-size:17px;font-weight:700;color:var(--text);line-height:1;font-variant-numeric:tabular-nums}
+.gmt-label{font-size:9px;color:var(--muted);margin-top:1px;line-height:1}
+.gmt-time{font-size:10px;color:var(--muted);line-height:1}
+.teams-row{font-size:14px;font-weight:600;color:var(--text);line-height:1.35;margin-bottom:3px}
+.vs{color:var(--muted);font-weight:400;font-size:11px;margin:0 3px}
+.venue-row{font-size:11px;color:var(--muted);margin-bottom:4px;display:flex;align-items:center;gap:3px}
+.badges{display:flex;flex-wrap:wrap;gap:3px}
+.badge{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;display:inline-block}
+.badge-group{background:#1e3a5f;color:#93c5fd}
+.badge-r32{background:#2d1b69;color:#a78bfa}
 .badge-r16{background:#1a3a2a;color:#4ade80}
-.badge-qf{background:var(--pill-qf);color:var(--pill-qf-text)}
-.badge-sf{background:var(--pill-sf);color:var(--pill-sf-text)}
+.badge-qf{background:#3b2000;color:#fbbf24}
+.badge-sf{background:#3b0000;color:#f87171}
 .badge-bronze{background:#1a1a1a;color:#9ca3af}
-.badge-final{background:var(--pill-final);color:var(--pill-final-text)}
-.badge-grp{background:#12263a;color:#60a5fa;font-size:10px}
-/* Empty */
-.empty{text-align:center;padding:48px 16px;color:var(--muted)}
-.empty-icon{font-size:40px;margin-bottom:12px}
-.empty p{font-size:14px}
-/* Toast */
-.toast{
-  position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);
-  background:var(--green-dim);border:1px solid var(--green);color:var(--green);
-  border-radius:var(--radius-sm);padding:10px 16px;font-size:13px;
-  opacity:0;transition:all .3s;z-index:999;white-space:nowrap;pointer-events:none;
-}
+.badge-final{background:#2d1f00;color:#f5c518}
+.badge-grp{background:#12263a;color:#60a5fa}
+
+/* Modal overlay */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:300;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-bg.open{opacity:1;pointer-events:all}
+.modal{background:var(--surface);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;padding:0 0 24px;transform:translateY(20px);transition:transform .25s}
+.modal-bg.open .modal{transform:translateY(0)}
+.modal-handle{width:36px;height:4px;background:var(--border);border-radius:4px;margin:10px auto 6px}
+.modal-header{padding:8px 16px 12px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.modal-title{font-size:15px;font-weight:700;color:var(--text)}
+.modal-close{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:0 4px;line-height:1}
+.modal-body{padding:12px 16px}
+
+/* Group accordion */
+.grp-block{margin-bottom:8px;border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.grp-header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--card);cursor:pointer;font-size:13px;font-weight:600;color:var(--text)}
+.grp-header .arr{transition:transform .25s;color:var(--muted);font-size:14px}
+.grp-header.open .arr{transform:rotate(180deg)}
+.grp-teams{display:none;padding:8px 14px 10px;background:var(--bg)}
+.grp-teams.open{display:block}
+.team-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px}
+.team-row:last-child{border-bottom:none}
+.team-flag{font-size:18px;width:24px;text-align:center}
+
+/* Teams grid */
+.teams-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;display:flex;align-items:center;gap:8px}
+.team-card .flag{font-size:20px}
+.team-card .info .name{font-size:13px;font-weight:600;color:var(--text)}
+.team-card .info .grp{font-size:10px;color:var(--muted)}
+
+/* Stadium list */
+.stadium-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 12px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.stadium-icon{font-size:22px;flex-shrink:0}
+.stadium-info .name{font-size:13px;font-weight:600;color:var(--text)}
+.stadium-info .city{font-size:11px;color:var(--muted);margin-top:1px}
+.country-badge{margin-left:auto;flex-shrink:0;font-size:10px;padding:3px 8px;border-radius:20px;font-weight:600}
+.cb-us{background:#1a2a4a;color:#93c5fd}
+.cb-ca{background:#2a1a1a;color:#f87171}
+.cb-mx{background:#1a2a1a;color:#4ade80}
+
+/* Empty / Toast */
+.empty{text-align:center;padding:40px 16px;color:var(--muted)}
+.empty-icon{font-size:36px;margin-bottom:10px}
+.toast{position:fixed;bottom:76px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--green-dim);border:1px solid var(--green);color:var(--green);border-radius:var(--radius-sm);padding:9px 14px;font-size:12px;opacity:0;transition:all .3s;z-index:999;white-space:nowrap;pointer-events:none}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-/* Install prompt */
-.install-banner{
-  position:fixed;bottom:0;left:0;right:0;z-index:200;
-  background:var(--surface);border-top:1px solid var(--border);
-  padding:14px 16px;display:flex;align-items:center;gap:10px;
-}
+
+/* Install banner */
+.install-banner{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--surface);border-top:1px solid var(--border);padding:12px 14px;display:flex;align-items:center;gap:10px}
 .install-banner.hidden{display:none}
-.install-info{flex:1}
-.install-info strong{font-size:14px;display:block;color:var(--text)}
-.install-info span{font-size:12px;color:var(--muted)}
-.install-btn{background:var(--gold);color:#000;border:none;border-radius:var(--radius-sm);padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0}
-.install-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px;flex-shrink:0}
-/* No matches today */
-.no-today{padding:10px 16px;font-size:13px;color:var(--muted);border-bottom:1px solid var(--border);background:var(--surface)}
+.install-info strong{font-size:13px;display:block;color:var(--text)}
+.install-info span{font-size:11px;color:var(--muted)}
+.install-btn{background:var(--gold);color:#000;border:none;border-radius:var(--radius-sm);padding:8px 14px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0}
+.install-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px;flex-shrink:0;margin-left:auto}
 </style>
 </head>
 <body>
@@ -180,52 +155,109 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:-apple-
 <div class="app-header">
   <div class="header-top">
     <div class="app-title">
-      <span class="trophy">🏆</span>
+      <span style="font-size:22px">🏆</span>
       <div>
         <h1>বিশ্বকাপ ২০২৬</h1>
-        <div class="sub">বাংলাদেশ সময় অনুযায়ী</div>
+        <div class="sub">বাংলাদেশ সময় (BDT, GMT+6)</div>
       </div>
     </div>
     <button class="notif-btn" id="notifBtn" onclick="toggleNotif()">
-      <span id="notifIcon">🔔</span>
-      <span id="notifText">নোটিফিকেশন চালু করুন</span>
+      <span id="notifIcon">🔔</span><span id="notifTxt">Notification</span>
     </button>
   </div>
   <div class="search-wrap">
-    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <svg class="ico" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <input class="search-input" type="text" id="searchInput" placeholder="দল বা ভেন্যু খুঁজুন..." oninput="renderList()">
   </div>
-  <div class="filter-row" id="filterRow"></div>
 </div>
 
+<!-- Nav tabs -->
+<div class="nav-tabs">
+  <div class="nav-tab active" id="tab-schedule" onclick="switchTab('schedule')">📅 সূচি</div>
+  <div class="nav-tab" id="tab-groups" onclick="switchTab('groups')">🔵 গ্রুপ</div>
+  <div class="nav-tab" id="tab-teams" onclick="switchTab('teams')">👥 দল</div>
+  <div class="nav-tab" id="tab-stadiums" onclick="switchTab('stadiums')">🏟️ স্টেডিয়াম</div>
+</div>
+
+<!-- Schedule stage filter -->
+<div class="filter-row" id="filterRow"></div>
+
+<!-- Stats bar -->
 <div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">104</div><div class="stat-label">ম্যাচ</div></div>
-  <div class="stat-item"><div class="stat-num">48</div><div class="stat-label">দল</div></div>
-  <div class="stat-item"><div class="stat-num">16</div><div class="stat-label">স্টেডিয়াম</div></div>
-  <div class="stat-item"><div class="stat-num">39</div><div class="stat-label">দিন</div></div>
+  <div class="stat-item" onclick="switchTab('schedule')"><div class="stat-num">104</div><div class="stat-label">ম্যাচ</div></div>
+  <div class="stat-item" onclick="switchTab('teams')"><div class="stat-num">48</div><div class="stat-label">দল</div></div>
+  <div class="stat-item" onclick="switchTab('stadiums')"><div class="stat-num">16</div><div class="stat-label">স্টেডিয়াম</div></div>
+  <div class="stat-item" onclick="switchTab('groups')"><div class="stat-num">12</div><div class="stat-label">গ্রুপ</div></div>
 </div>
 
 <div id="todayBanner"></div>
-<div class="main" id="mainList"></div>
+<div class="main" id="mainContent"></div>
+
+<!-- Modal -->
+<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <span class="modal-title" id="modalTitle"></span>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
 
 <div class="toast" id="toast"></div>
-
 <div class="install-banner hidden" id="installBanner">
-  <div class="install-info">
-    <strong>📲 Home Screen-এ যোগ করুন</strong>
-    <span>Offline-এও কাজ করবে, নোটিফিকেশন পাবেন</span>
-  </div>
+  <div class="install-info"><strong>📲 Home Screen-এ যোগ করুন</strong><span>Offline কাজ করবে + notification পাবেন</span></div>
   <button class="install-btn" onclick="installApp()">Install</button>
   <button class="install-close" onclick="document.getElementById('installBanner').classList.add('hidden')">✕</button>
 </div>
 
 <script>
-const MONTHS_BN=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
-const DAYS_BN=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+// ─── Data ───────────────────────────────────────────────────────────────────
 
-function fmtDate(str){const d=new Date(str+'T12:00:00');return `${DAYS_BN[d.getDay()]}, ${d.getDate()} ${MONTHS_BN[d.getMonth()]}`}
+const GROUPS = {
+  A:['মেক্সিকো 🇲🇽','দক্ষিণ কোরিয়া 🇰🇷','দক্ষিণ আফ্রিকা 🇿🇦','TBD (প্লে-অফ)'],
+  B:['কানাডা 🇨🇦','সুইজারল্যান্ড 🇨🇭','কাতার 🇶🇦','TBD (প্লে-অফ)'],
+  C:['ব্রাজিল 🇧🇷','মরক্কো 🇲🇦','স্কটল্যান্ড 🏴󠁧󠁢󠁳󠁣󠁴󠁿','হাইতি 🇭🇹'],
+  D:['যুক্তরাষ্ট্র 🇺🇸','অস্ট্রেলিয়া 🇦🇺','প্যারাগুয়ে 🇵🇾','TBD (প্লে-অফ)'],
+  E:['জার্মানি 🇩🇪','ইকুয়েডর 🇪🇨','আইভরি কোস্ট 🇨🇮','কিউরাসাও 🇨🇼'],
+  F:['নেদারল্যান্ডস 🇳🇱','জাপান 🇯🇵','তিউনিসিয়া 🇹🇳','TBD (প্লে-অফ)'],
+  G:['বেলজিয়াম 🇧🇪','ইরান 🇮🇷','মিশর 🇪🇬','নিউ জিল্যান্ড 🇳🇿'],
+  H:['স্পেন 🇪🇸','উরুগুয়ে 🇺🇾','সৌদি আরব 🇸🇦','কেপ ভার্দে 🇨🇻'],
+  I:['ফ্রান্স 🇫🇷','সেনেগাল 🇸🇳','নরওয়ে 🇳🇴','TBD (প্লে-অফ)'],
+  J:['আর্জেন্টিনা 🇦🇷','অস্ট্রিয়া 🇦🇹','আলজেরিয়া 🇩🇿','জর্ডান 🇯🇴'],
+  K:['পর্তুগাল 🇵🇹','কলম্বিয়া 🇨🇴','উজবেকিস্তান 🇺🇿','TBD (প্লে-অফ)'],
+  L:['ইংল্যান্ড 🏴󠁧󠁢󠁥󠁮󠁧󠁿','ক্রোয়েশিয়া 🇭🇷','পানামা 🇵🇦','ঘানা 🇬🇭'],
+};
 
-const RAW=[
+const STADIUMS = [
+  {name:'Estadio Azteca (Mexico City Stadium)',city:'মেক্সিকো সিটি',country:'মেক্সিকো 🇲🇽',cap:'87,523',cls:'cb-mx'},
+  {name:'Estadio Akron (Guadalajara Stadium)',city:'গুয়াদালাহারা',country:'মেক্সিকো 🇲🇽',cap:'49,850',cls:'cb-mx'},
+  {name:'Estadio BBVA (Monterrey Stadium)',city:'মন্তেরে',country:'মেক্সিকো 🇲🇽',cap:'53,500',cls:'cb-mx'},
+  {name:'BC Place (Vancouver Stadium)',city:'ভ্যানকুভার',country:'কানাডা 🇨🇦',cap:'54,500',cls:'cb-ca'},
+  {name:'BMO Field (Toronto Stadium)',city:'টরন্টো',country:'কানাডা 🇨🇦',cap:'45,000',cls:'cb-ca'},
+  {name:'MetLife Stadium (NY/NJ Stadium)',city:'নিউ ইয়র্ক-নিউ জার্সি',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'82,500',cls:'cb-us'},
+  {name:'AT&T Stadium (Dallas Stadium)',city:'ড্যালাস',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'80,000',cls:'cb-us'},
+  {name:'SoFi Stadium (Los Angeles Stadium)',city:'লস অ্যাঞ্জেলেস',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'70,240',cls:'cb-us'},
+  {name:'NRG Stadium (Houston Stadium)',city:'হিউস্টন',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'72,220',cls:'cb-us'},
+  {name:'Lincoln Financial Field (Philadelphia Stadium)',city:'ফিলাডেলফিয়া',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'69,796',cls:'cb-us'},
+  {name:'Levi\'s Stadium (San Francisco Bay Area)',city:'সান ফ্রান্সিসকো',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'68,500',cls:'cb-us'},
+  {name:'Mercedes-Benz Stadium (Atlanta Stadium)',city:'আটলান্টা',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'71,000',cls:'cb-us'},
+  {name:'Hard Rock Stadium (Miami Stadium)',city:'মিয়ামি',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'65,326',cls:'cb-us'},
+  {name:'Arrowhead Stadium (Kansas City Stadium)',city:'কানসাস সিটি',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'76,416',cls:'cb-us'},
+  {name:'Lumen Field (Seattle Stadium)',city:'সিয়াটেল',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'68,740',cls:'cb-us'},
+  {name:'Gillette Stadium (Boston Stadium)',city:'বোস্টন',country:'যুক্তরাষ্ট্র 🇺🇸',cap:'65,878',cls:'cb-us'},
+];
+
+// All 48 teams flat list
+const ALL_TEAMS = Object.entries(GROUPS).flatMap(([g, teams]) =>
+  teams.map(t => ({team: t, group: g}))
+);
+
+// Matches — BDT times stored directly as local BD time strings
+// Formula: GMT+6. If gH+6 >= 24 then date is next day.
+// We store {date (UTC date), gH, gM} and compute BDT at runtime
+const RAW = [
   {date:'2026-06-11',gH:21,gM:0,t1:'মেক্সিকো 🇲🇽',t2:'দক্ষিণ আফ্রিকা 🇿🇦',v:'মেক্সিকো সিটি',s:'group',g:'A'},
   {date:'2026-06-12',gH:4,gM:0,t1:'দক্ষিণ কোরিয়া 🇰🇷',t2:'TBD',v:'গুয়াদালাহারা',s:'group',g:'A'},
   {date:'2026-06-12',gH:20,gM:0,t1:'কানাডা 🇨🇦',t2:'TBD',v:'টরন্টো',s:'group',g:'B'},
@@ -298,7 +330,6 @@ const RAW=[
   {date:'2026-06-28',gH:2,gM:30,t1:'TBD',t2:'উজবেকিস্তান 🇺🇿',v:'আটলান্টা',s:'group',g:'K'},
   {date:'2026-06-28',gH:4,gM:0,t1:'আলজেরিয়া 🇩🇿',t2:'অস্ট্রিয়া 🇦🇹',v:'কানসাস সিটি',s:'group',g:'J'},
   {date:'2026-06-28',gH:4,gM:0,t1:'জর্ডান 🇯🇴',t2:'আর্জেন্টিনা 🇦🇷',v:'ড্যালাস',s:'group',g:'J'},
-  // Round of 32
   {date:'2026-06-28',gH:23,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১',v:'লস অ্যাঞ্জেলেস',s:'r32'},
   {date:'2026-06-29',gH:19,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ২',v:'হিউস্টন',s:'r32'},
   {date:'2026-06-29',gH:22,gM:30,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ৩',v:'বোস্টন',s:'r32'},
@@ -315,7 +346,6 @@ const RAW=[
   {date:'2026-07-03',gH:21,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৪',v:'ড্যালাস',s:'r32'},
   {date:'2026-07-03',gH:23,gM:0,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৫',v:'মিয়ামি',s:'r32'},
   {date:'2026-07-04',gH:3,gM:30,t1:'রাউন্ড অব ৩২',t2:'ম্যাচ ১৬',v:'কানসাস সিটি',s:'r32'},
-  // R16
   {date:'2026-07-04',gH:19,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ১',v:'হিউস্টন',s:'r16'},
   {date:'2026-07-04',gH:22,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ২',v:'ফিলাডেলফিয়া',s:'r16'},
   {date:'2026-07-05',gH:21,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৩',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'r16'},
@@ -324,108 +354,150 @@ const RAW=[
   {date:'2026-07-07',gH:4,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৬',v:'সিয়াটেল',s:'r16'},
   {date:'2026-07-07',gH:17,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৭',v:'আটলান্টা',s:'r16'},
   {date:'2026-07-08',gH:0,gM:0,t1:'রাউন্ড অব ১৬',t2:'ম্যাচ ৮',v:'ভ্যানকুভার',s:'r16'},
-  // QF
   {date:'2026-07-09',gH:21,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ১',v:'বোস্টন',s:'qf'},
   {date:'2026-07-10',gH:23,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ২',v:'লস অ্যাঞ্জেলেস',s:'qf'},
   {date:'2026-07-11',gH:22,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ৩',v:'মিয়ামি',s:'qf'},
   {date:'2026-07-12',gH:3,gM:0,t1:'কোয়ার্টার ফাইনাল',t2:'ম্যাচ ৪',v:'কানসাস সিটি',s:'qf'},
-  // SF
   {date:'2026-07-14',gH:21,gM:0,t1:'সেমিফাইনাল',t2:'ম্যাচ ১',v:'ড্যালাস',s:'sf'},
   {date:'2026-07-15',gH:20,gM:0,t1:'সেমিফাইনাল',t2:'ম্যাচ ২',v:'আটলান্টা',s:'sf'},
-  // Bronze + Final
   {date:'2026-07-18',gH:22,gM:0,t1:'তৃতীয় স্থান নির্ধারণ',t2:'',v:'মিয়ামি',s:'bronze'},
   {date:'2026-07-19',gH:20,gM:0,t1:'🏆 ফাইনাল',t2:'',v:'নিউ ইয়র্ক-নিউ জার্সি',s:'final'},
 ];
 
-function getBDTime(m){let h=m.gH+6,min=m.gM;if(h>=24)h-=24;return `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`}
-function getBDDate(m){const d=new Date(m.date+'T00:00:00');if(m.gH+6>=24)d.setDate(d.getDate()+1);return d.toISOString().slice(0,10)}
-function getTodayBD(){const n=new Date();const bd=new Date(n.getTime()+6*60*60*1000);return bd.toISOString().slice(0,10)}
+// ─── Helpers ────────────────────────────────────────────────────────────────
 
-const FILTERS=[
+const M=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+const D=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+
+// BDT = UTC + 6h
+function getBDT(m) {
+  let h = m.gH + 6, min = m.gM;
+  if (h >= 24) h -= 24;
+  return `${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`;
+}
+// BDT date (may be next calendar day if gH+6 crosses midnight)
+function getBDDate(m) {
+  const d = new Date(m.date + 'T00:00:00Z');
+  if (m.gH + 6 >= 24) d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
+}
+// Current date in BDT
+function todayBDT() {
+  const now = new Date();
+  const bd = new Date(now.getTime() + 6 * 3600 * 1000);
+  return bd.toISOString().slice(0, 10);
+}
+function fmtDate(str) {
+  const d = new Date(str + 'T12:00:00Z');
+  return `${D[d.getUTCDay()]}, ${d.getUTCDate()} ${M[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
+}
+const STAGE_LBL = {group:'গ্রুপ পর্যায়',r32:'রাউন্ড অব ৩২',r16:'রাউন্ড অব ১৬',qf:'কোয়ার্টার ফাইনাল',sf:'সেমিফাইনাল',bronze:'তৃতীয় স্থান',final:'ফাইনাল'};
+
+// ─── Tabs ────────────────────────────────────────────────────────────────────
+
+let currentTab = 'schedule';
+let activeFilter = '';
+
+function switchTab(tab) {
+  currentTab = tab;
+  ['schedule','groups','teams','stadiums'].forEach(t => {
+    document.getElementById('tab-' + t).classList.toggle('active', t === tab);
+  });
+  const fr = document.getElementById('filterRow');
+  fr.style.display = tab === 'schedule' ? 'flex' : 'none';
+  document.getElementById('searchInput').placeholder =
+    tab === 'schedule' ? 'দল বা ভেন্যু খুঁজুন...' :
+    tab === 'groups'   ? 'গ্রুপ বা দল খুঁজুন...' :
+    tab === 'teams'    ? 'দলের নাম খুঁজুন...' : 'স্টেডিয়াম বা শহর খুঁজুন...';
+  renderContent();
+}
+
+// ─── Filter chips ─────────────────────────────────────────────────────────────
+
+const CHIPS = [
   {id:'',label:'সব'},
-  {id:'group',label:'গ্রুপ'},
+  {id:'group',label:'গ্রুপ পর্যায়'},
   {id:'r32',label:'রাউন্ড ৩২'},
   {id:'r16',label:'রাউন্ড ১৬'},
   {id:'qf',label:'কোয়ার্টার'},
   {id:'sf',label:'সেমি'},
   {id:'final',label:'ফাইনাল'},
 ];
-
-let activeFilter='';
-
-// Render filter chips
-document.getElementById('filterRow').innerHTML=FILTERS.map(f=>
-  `<button class="chip${f.id===activeFilter?' active':''}" onclick="setFilter('${f.id}')">${f.label}</button>`
+document.getElementById('filterRow').innerHTML = CHIPS.map(c =>
+  `<button class="chip${c.id===activeFilter?' active':''}" onclick="setFilter('${c.id}')">${c.label}</button>`
 ).join('');
 
-function setFilter(id){
-  activeFilter=id;
-  document.querySelectorAll('.chip').forEach((c,i)=>c.classList.toggle('active',FILTERS[i].id===id));
-  renderList();
+function setFilter(id) {
+  activeFilter = id;
+  document.querySelectorAll('.chip').forEach((c, i) => c.classList.toggle('active', CHIPS[i].id === id));
+  renderContent();
 }
 
-function stageLabel(s){
-  return {group:'গ্রুপ পর্যায়',r32:'রাউন্ড অব ৩২',r16:'রাউন্ড অব ১৬',qf:'কোয়ার্টার ফাইনাল',sf:'সেমিফাইনাল',bronze:'তৃতীয় স্থান',final:'ফাইনাল'}[s]||s;
+// ─── Render dispatcher ──────────────────────────────────────────────────────
+
+function renderContent() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  if (currentTab === 'schedule') renderList(q);
+  else if (currentTab === 'groups') renderGroups(q);
+  else if (currentTab === 'teams') renderTeams(q);
+  else renderStadiums(q);
 }
-function stageCls(s){return `badge-${s}`;}
 
-function renderList(){
-  const q=document.getElementById('searchInput').value.toLowerCase();
-  const today=getTodayBD();
+// ─── Schedule tab ────────────────────────────────────────────────────────────
 
-  const filtered=RAW.filter(m=>{
-    const txt=(m.t1+m.t2+m.v+(m.g||'')).toLowerCase();
-    return (!q||txt.includes(q))&&(!activeFilter||m.s===activeFilter);
+function renderList(q) {
+  const today = todayBDT();
+
+  const todayMs = RAW.filter(m => getBDDate(m) === today);
+  const tb = document.getElementById('todayBanner');
+  if (todayMs.length) {
+    tb.innerHTML = `<div class="today-banner"><div class="live-dot"></div><div class="today-text">আজ <span class="today-count">${todayMs.length}টি</span> ম্যাচ আছে — BDT অনুযায়ী</div></div>`;
+  } else {
+    const s = '2026-06-11', e = '2026-07-19';
+    tb.innerHTML = `<div class="no-today">${today < s ? 'টুর্নামেন্ট শুরু হবে ১১ জুন ২০২৬ ⏳' : today > e ? 'টুর্নামেন্ট শেষ 🏆' : 'আজ কোনো ম্যাচ নেই'}</div>`;
+  }
+
+  const filtered = RAW.filter(m => {
+    const txt = (m.t1 + m.t2 + m.v + (m.g || '')).toLowerCase();
+    return (!q || txt.includes(q)) && (!activeFilter || m.s === activeFilter);
   });
 
-  const byDay={};
-  filtered.forEach(m=>{const k=getBDDate(m);if(!byDay[k])byDay[k]=[];byDay[k].push(m);});
-  const days=Object.keys(byDay).sort();
+  const byDay = {};
+  filtered.forEach(m => { const k = getBDDate(m); (byDay[k] = byDay[k] || []).push(m); });
+  const days = Object.keys(byDay).sort();
 
-  // Today banner
-  const todayMatches=RAW.filter(m=>getBDDate(m)===today);
-  const todayEl=document.getElementById('todayBanner');
-  if(todayMatches.length>0){
-    todayEl.innerHTML=`<div class="today-banner"><div class="live-dot"></div><div class="today-text">আজ <span class="today-count">${todayMatches.length}টি</span> ম্যাচ আছে</div></div>`;
-  } else {
-    // Check if tournament started/ended
-    const start='2026-06-11', end='2026-07-19';
-    if(today<start){todayEl.innerHTML=`<div class="no-today">টুর্নামেন্ট শুরু হবে ১১ জুন ২০২৬ থেকে ⏳</div>`;}
-    else if(today>end){todayEl.innerHTML=`<div class="no-today">টুর্নামেন্ট শেষ হয়েছে। ধন্যবাদ! 🏆</div>`;}
-    else{todayEl.innerHTML=`<div class="no-today">আজ কোনো ম্যাচ নেই</div>`;}
-  }
+  const el = document.getElementById('mainContent');
+  if (!days.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কোনো ম্যাচ পাওয়া যায়নি</p></div>'; return; }
 
-  const el=document.getElementById('mainList');
-  if(!days.length){
-    el.innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p>কোনো ম্যাচ পাওয়া যায়নি</p></div>';
-    return;
-  }
-
-  el.innerHTML=days.map(day=>{
-    const isToday=day===today;
-    const ms=byDay[day].sort((a,b)=>getBDTime(a).localeCompare(getBDTime(b)));
+  el.innerHTML = days.map(day => {
+    const isToday = day === today;
+    const ms = byDay[day].sort((a, b) => getBDT(a).localeCompare(getBDT(b)));
     return `<div class="day-section">
       <div class="day-header">
-        <span class="day-name${isToday?' today-hl':''}">${fmtDate(day)}${isToday?'<span class="today-tag">আজ</span>':''}</span>
+        <span class="day-name${isToday?' hl':''}">${fmtDate(day)}${isToday?'<span class="today-tag">আজ</span>':''}</span>
         <span class="day-count">${ms.length}টি</span>
       </div>
-      ${ms.map(m=>{
-        const bd=getBDTime(m);
-        const isFinal=m.s==='final';
-        const isTdy=getBDDate(m)===today;
-        const gmtStr=`GMT ${String(m.gH).padStart(2,'0')}:${String(m.gM).padStart(2,'0')}`;
-        const teamsHtml=m.t2?`${m.t1} <span class="vs">বনাম</span> ${m.t2}`:m.t1;
+      ${ms.map(m => {
+        const bdt = getBDT(m);
+        const gmtStr = `GMT+0 ${String(m.gH).padStart(2,'0')}:${String(m.gM).padStart(2,'0')}`;
+        const isFinal = m.s === 'final';
+        const isTdy = getBDDate(m) === today;
+        const teams = m.t2 ? `${m.t1}<span class="vs">বনাম</span>${m.t2}` : m.t1;
         return `<div class="match-card${isFinal?' is-final':''}${isTdy?' is-today':''}">
           <div class="time-col">
-            <div class="bd-time">${bd}</div>
+            <div class="bd-time">${bdt}</div>
+            <div class="gmt-label">BDT</div>
             <div class="gmt-time">${gmtStr}</div>
           </div>
           <div>
-            <div class="teams-row">${teamsHtml}</div>
-            <div class="venue-row"><svg class="pin-icon" width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>${m.v}</div>
+            <div class="teams-row">${teams}</div>
+            <div class="venue-row">
+              <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="opacity:.5;flex-shrink:0"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              ${m.v}
+            </div>
             <div class="badges">
-              <span class="badge ${stageCls(m.s)}">${stageLabel(m.s)}</span>
-              ${m.g?`<span class="badge badge-grp">গ্রুপ ${m.g}</span>`:''}
+              <span class="badge badge-${m.s}">${STAGE_LBL[m.s]||m.s}</span>
+              ${m.g ? `<span class="badge badge-grp">গ্রুপ ${m.g}</span>` : ''}
             </div>
           </div>
         </div>`;
@@ -433,97 +505,159 @@ function renderList(){
     </div>`;
   }).join('');
 
-  // Scroll to today section on first load
-  if(!window._scrolled){
-    window._scrolled=true;
-    setTimeout(()=>{
-      const firstToday=document.querySelector('.is-today');
-      if(firstToday)firstToday.scrollIntoView({behavior:'smooth',block:'center'});
-    },300);
+  if (!window._scrolled) {
+    window._scrolled = true;
+    setTimeout(() => { const f = document.querySelector('.is-today'); if(f) f.scrollIntoView({behavior:'smooth',block:'center'}); }, 300);
   }
-
-  // Send matches to SW for notification
-  scheduleTodayNotif(todayMatches);
+  scheduleTodayNotif(todayMs);
 }
 
-// Notification handling
-let notifEnabled=localStorage.getItem('notif')==='1';
+// ─── Groups tab ──────────────────────────────────────────────────────────────
 
-function updateNotifBtn(){
-  const btn=document.getElementById('notifBtn');
-  const icon=document.getElementById('notifIcon');
-  const txt=document.getElementById('notifText');
-  if(notifEnabled){
-    btn.classList.add('on');
-    icon.textContent='🔔';
-    txt.textContent='নোটিফিকেশন চালু';
-  } else {
-    btn.classList.remove('on');
-    icon.textContent='🔕';
-    txt.textContent='নোটিফিকেশন চালু করুন';
-  }
+let openGroups = new Set(Object.keys(GROUPS)); // all open by default
+
+function renderGroups(q) {
+  document.getElementById('todayBanner').innerHTML = '';
+  const el = document.getElementById('mainContent');
+  const entries = Object.entries(GROUPS).filter(([gk, teams]) =>
+    !q || gk.toLowerCase().includes(q) || teams.some(t => t.toLowerCase().includes(q))
+  );
+  if (!entries.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কিছু পাওয়া যায়নি</p></div>'; return; }
+
+  el.innerHTML = '<div style="padding:10px 0">' + entries.map(([gk, teams]) => {
+    const isOpen = openGroups.has(gk);
+    const filteredTeams = q ? teams.filter(t => t.toLowerCase().includes(q) || gk.toLowerCase().includes(q)) : teams;
+    return `<div class="grp-block">
+      <div class="grp-header${isOpen?' open':''}" onclick="toggleGroup('${gk}')">
+        <span>গ্রুপ ${gk} <span style="color:var(--muted);font-weight:400;font-size:11px;margin-left:6px">${filteredTeams.length} দল</span></span>
+        <span class="arr">▼</span>
+      </div>
+      <div class="grp-teams${isOpen?' open':''}" id="grp-${gk}">
+        ${filteredTeams.map(t => {
+          const parts = t.split(' ');
+          const flag = parts[parts.length - 1];
+          const name = parts.slice(0, -1).join(' ');
+          return `<div class="team-row"><span class="team-flag">${flag}</span><span>${name}</span></div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }).join('') + '</div>';
 }
 
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
+function toggleGroup(gk) {
+  if (openGroups.has(gk)) openGroups.delete(gk); else openGroups.add(gk);
+  renderGroups(document.getElementById('searchInput').value.toLowerCase().trim());
 }
 
-async function toggleNotif(){
-  if(!('Notification' in window)){showToast('এই browser-এ notification সাপোর্ট নেই');return;}
-  if(notifEnabled){
-    notifEnabled=false;localStorage.setItem('notif','0');updateNotifBtn();showToast('নোটিফিকেশন বন্ধ করা হয়েছে');return;
-  }
-  const perm=await Notification.requestPermission();
-  if(perm==='granted'){
-    notifEnabled=true;localStorage.setItem('notif','1');updateNotifBtn();
+// ─── Teams tab ───────────────────────────────────────────────────────────────
+
+function renderTeams(q) {
+  document.getElementById('todayBanner').innerHTML = '';
+  const el = document.getElementById('mainContent');
+  const filtered = ALL_TEAMS.filter(({team}) => !q || team.toLowerCase().includes(q));
+  if (!filtered.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কোনো দল পাওয়া যায়নি</p></div>'; return; }
+  el.innerHTML = `<div style="padding:10px 0">
+    <div style="font-size:12px;color:var(--muted);padding:4px 2px 10px">মোট ${filtered.length}টি দল</div>
+    <div class="teams-grid">
+      ${filtered.map(({team, group}) => {
+        const parts = team.split(' ');
+        const flag = parts[parts.length - 1];
+        const name = parts.slice(0, -1).join(' ');
+        return `<div class="team-card">
+          <div class="flag">${flag}</div>
+          <div class="info">
+            <div class="name">${name}</div>
+            <div class="grp">গ্রুপ ${group}</div>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+// ─── Stadiums tab ─────────────────────────────────────────────────────────────
+
+function renderStadiums(q) {
+  document.getElementById('todayBanner').innerHTML = '';
+  const el = document.getElementById('mainContent');
+  const filtered = STADIUMS.filter(s => !q || s.name.toLowerCase().includes(q) || s.city.toLowerCase().includes(q) || s.country.toLowerCase().includes(q));
+  if (!filtered.length) { el.innerHTML = '<div class="empty"><div class="empty-icon">🔍</div><p>কিছু পাওয়া যায়নি</p></div>'; return; }
+  el.innerHTML = `<div style="padding:10px 0">
+    <div style="font-size:12px;color:var(--muted);padding:4px 2px 10px">মোট ${filtered.length}টি স্টেডিয়াম</div>
+    ${filtered.map(s => `<div class="stadium-card">
+      <div class="stadium-icon">🏟️</div>
+      <div class="stadium-info">
+        <div class="name">${s.name}</div>
+        <div class="city">📍 ${s.city} &nbsp;·&nbsp; ধারণক্ষমতা: ${s.cap}</div>
+      </div>
+      <span class="country-badge ${s.cls}">${s.country}</span>
+    </div>`).join('')}
+  </div>`;
+}
+
+// ─── Notification ─────────────────────────────────────────────────────────────
+
+let notifOn = localStorage.getItem('notif') === '1';
+function updateNotifBtn() {
+  const b = document.getElementById('notifBtn');
+  document.getElementById('notifIcon').textContent = notifOn ? '🔔' : '🔕';
+  document.getElementById('notifTxt').textContent = notifOn ? 'চালু' : 'Notification';
+  b.classList.toggle('on', notifOn);
+}
+async function toggleNotif() {
+  if (!('Notification' in window)) { showToast('এই browser-এ সাপোর্ট নেই'); return; }
+  if (notifOn) { notifOn = false; localStorage.setItem('notif','0'); updateNotifBtn(); showToast('নোটিফিকেশন বন্ধ'); return; }
+  const p = await Notification.requestPermission();
+  if (p === 'granted') {
+    notifOn = true; localStorage.setItem('notif','1'); updateNotifBtn();
     showToast('✅ প্রতিদিন সকাল ৯টায় notification পাবেন!');
-    scheduleTodayNotif(RAW.filter(m=>getBDDate(m)===getTodayBD()));
-  } else {
-    showToast('❌ Permission দেওয়া হয়নি। Settings থেকে Allow করুন।');
-  }
+    scheduleTodayNotif(RAW.filter(m => getBDDate(m) === todayBDT()));
+  } else { showToast('❌ Permission দিন Settings থেকে'); }
 }
-
-function scheduleTodayNotif(todayMatches){
-  if(!notifEnabled||!('serviceWorker' in navigator))return;
-  navigator.serviceWorker.ready.then(reg=>{
-    if(reg.active){
-      reg.active.postMessage({
-        type:'SCHEDULE_NOTIFICATION',
-        matches:todayMatches.map(m=>({time:getBDTime(m),teams:m.t2?`${m.t1} বনাম ${m.t2}`:m.t1}))
-      });
-    }
+function scheduleTodayNotif(ms) {
+  if (!notifOn || !('serviceWorker' in navigator)) return;
+  navigator.serviceWorker.ready.then(r => {
+    if (r.active) r.active.postMessage({type:'SCHEDULE_NOTIFICATION', matches: ms.map(m => ({time:getBDT(m), teams:m.t2?`${m.t1} বনাম ${m.t2}`:m.t1}))});
   });
 }
 
-// PWA install prompt
-let deferredPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{
-  e.preventDefault();deferredPrompt=e;
-  if(!localStorage.getItem('installDismissed')){
-    document.getElementById('installBanner').classList.remove('hidden');
-  }
-});
+// ─── Toast ───────────────────────────────────────────────────────────────────
 
-function installApp(){
-  if(deferredPrompt){
+function showToast(msg) {
+  const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ─── Modal ───────────────────────────────────────────────────────────────────
+
+function closeModal(e) { if (e.target.id === 'modalBg') closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modalBg').classList.remove('open'); }
+
+// ─── Install ─────────────────────────────────────────────────────────────────
+
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault(); deferredPrompt = e;
+  if (!localStorage.getItem('installDismissed')) document.getElementById('installBanner').classList.remove('hidden');
+});
+function installApp() {
+  if (deferredPrompt) {
     deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(r=>{
-      if(r.outcome==='accepted'){showToast('✅ App install হচ্ছে!');localStorage.setItem('installDismissed','1');}
-      deferredPrompt=null;
-      document.getElementById('installBanner').classList.add('hidden');
+    deferredPrompt.userChoice.then(r => {
+      if (r.outcome === 'accepted') { showToast('✅ Install হচ্ছে!'); localStorage.setItem('installDismissed','1'); }
+      deferredPrompt = null; document.getElementById('installBanner').classList.add('hidden');
     });
   }
 }
 
-// Register service worker
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./sw.js').catch(console.error);
-}
+// ─── Service Worker ──────────────────────────────────────────────────────────
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(console.error);
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
 
 updateNotifBtn();
-renderList();
+renderContent();
 </script>
 </body>
 </html>
